@@ -216,3 +216,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+*.pbf
+*.gpkg
+*.Rds, 
+*.parquet
+*.json
+
+Data/
+Code/cache/
