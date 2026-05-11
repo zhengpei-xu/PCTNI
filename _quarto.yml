@@ -1,0 +1,68 @@
+# 1. Project Configuration
+project:
+  type: website
+  output-dir: _site
+
+# 2. Website UI and Navigation
+website:
+  title: "Belfast Active Travel Research"
+  favicon: image/favicon.png
+
+  navbar:
+    background: dark
+    search: true
+    left:
+      - href: index.qmd
+        text: "Home"
+    right:
+      - icon: github
+        href: https://github.com/zhengpei-xu
+
+  sidebar:
+    style: "docked"
+    contents:
+      - section: "Overview"
+        contents:
+          - index.qmd
+      - section: "Technical Analysis"
+        contents:
+          - text: "LTS Classification"
+            href: Code/belfast_cycle_lts_assessment.ipynb
+          - notebooks/test.ipynb
+
+# 3. HTML Formatting and Styles
+format:
+  html:
+    theme: flatly
+    toc: true
+    toc-location: right
+    toc-title: "On this page"
+    code-fold: true
+    include-in-header:
+      text: |
+        <style>
+          /* Force pure black navbar */
+          .navbar {
+            background-color: #000000 !important;
+          }
+
+          /* Hide the dark mode toggle button */
+          .quarto-color-scheme-toggle {
+            display: none !important;
+          }
+
+          /* Match callout-tip to theme accent */
+          .callout-tip {
+            border-left-color: #2c3e50 !important;
+            background-color: #ffffff !important;
+          }
+          .callout-tip .callout-icon::before {
+            color: #2c3e50 !important;
+          }
+          .callout-tip .callout-title {
+            color: #2c3e50 !important;
+          }
+        </style>
+
+# 4. General Settings
+lang: en

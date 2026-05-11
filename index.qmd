@@ -1,0 +1,23 @@
+---
+title: "Belfast Cycle Network Assessment"
+subtitle: "An ML Approach to LTN 1/20 & Active Travel Deserts"
+author: "Zhengpei (Pippin) Xu"
+date: last-modified
+---
+
+# Research Overview
+
+This project investigates the spatial quality of the Belfast cycling network. By applying **Level of Traffic Stress (LTS)** classifications and **LTN 1/20** standards, I aim to identify "Active Travel Deserts"—areas where infrastructure supply fails to meet high demand.
+
+### Key Objectives
+* **Infrastructure Audit**: Cleaning and joining OSNI pothole data to road segments.
+* **LTS Classification**: Categorizing road stress levels based on traffic volume and speed.
+* **Equity Analysis**: Assessing accessibility for marginalized socio-economic groups.
+
+::: {.callout-tip}
+## Research Progress
+The current analysis focuses on the Belfast urban core. Technical notebooks can be found in the sidebar under **Technical Analysis**.
+:::
+
+### Methodology Summary
+As highlighted in the research by Eppenberger and Richter (2021), spatial equity is a critical lens for urban mobility. This project utilizes the `urbsim` Python environment for all spatial joins and network modeling.
