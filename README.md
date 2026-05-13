@@ -12,7 +12,7 @@
 
 ### 📊 Interactive Dashboard — Belfast LTS Connectivity Explorer
 
-👉 **[Launch Dashboard](belfast-cycling-dashboard/belfast_lts_connectivity_dashboard.html)**
+👉 **[Launch Dashboard]([belfast-cycling-dashboard/belfast_lts_connectivity_dashboard.html](https://zhengpei-xu.github.io//PCTNI/belfast-cycling-dashboard/belfast_lts_connectivity_dashboard.html))**
 
 Explore Belfast's cycling network interactively:
 - LTS-classified road network map (colour-coded by stress level)
