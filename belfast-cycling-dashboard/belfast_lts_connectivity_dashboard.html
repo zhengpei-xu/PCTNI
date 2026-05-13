@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belfast Cycling Network Connectivity</title>
+  <link rel="icon" type="image/png" href="../Image/favicon.png">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #232736;
+      --border: #2e3348;
+      --text: #e4e6f0;
+      --text-dim: #8b8fa8;
+      --accent: #2dd4bf;
+      --accent-dim: #1a9a8a;
+      /* darker turquoise for hover */
+      --lts1: #2ecc71;
+      --lts2: #f1c40f;
+      --lts3: #e67e22;
+      --lts4: #e74c3c;
+      --panel-w: 380px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f0f0f0;
+      color: var(--text);
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    #app {
+      display: flex;
+      height: 100vh;
+    }
+
+    /* ── Left Panel ──────────────────────────── */
+    #panel {
+      width: var(--panel-w);
+      background: var(--bg);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      overflow-x: hidden;
+      z-index: 1000;
+    }
+
+    /* ── Map ───────────────────────────────────── */
+    #map-container {
+      flex: 1;
+      position: relative;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+
+    .leaflet-control-attribution {
+      font-size: 10px !important;
+    }
+
+    .panel-header {
+      padding: 20px 20px 14px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .panel-header h1 {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 2px;
+    }
+
+    .panel-header .sub {
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    .panel-section {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .panel-section h2 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── SDZ Selector ─────────────────────────── */
+    #sdz-select {
+      width: 100%;
+      padding: 8px 12px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238b8fa8'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+    }
+
+    #sdz-select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    /* ── SDZ Info Card ────────────────────────── */
+    .sdz-info {
+      display: none;
+      margin-top: 12px;
+      padding: 12px;
+      background: var(--surface2);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .sdz-info.active {
+      display: block;
+    }
+
+    .sdz-name {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .sdz-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    .sdz-dea {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    /* ── LTS Distribution Chart ───────────────── */
+    .lts-chart {
+      display: flex;
+      gap: 6px;
+      align-items: flex-end;
+      height: 100px;
+      margin-top: 8px;
+    }
+
+    .lts-bar-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+    }
+
+    .lts-bar {
+      width: 100%;
+      border-radius: 4px 4px 0 0;
+      min-height: 2px;
+      transition: height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .lts-bar-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .lts-bar-label {
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* ── Info Tooltip ─────────────────────────── */
+    .info-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-dim);
+      cursor: help;
+      position: relative;
+      font-style: normal;
+    }
+
+    .info-icon .tooltip {
+      display: none;
+      position: absolute;
+      left: 24px;
+      top: -8px;
+      width: 260px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-dim);
+      line-height: 1.6;
+      text-transform: none;
+      letter-spacing: 0;
+      z-index: 100;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .info-icon:hover .tooltip {
+      display: block;
+    }
+
+    .tooltip strong {
+      color: var(--text);
+    }
+
+    /* ── Detour Slider ────────────────────────── */
+    .slider-container {
+      margin-top: 4px;
+    }
+
+    .slider-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .slider-row input[type="range"] {
+      flex: 1;
+      -webkit-appearance: none;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      outline: none;
+    }
+
+    .slider-row input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      border: 2px solid var(--bg);
+    }
+
+    .slider-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      min-width: 42px;
+      text-align: right;
+    }
+
+    .slider-hint {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    .slider-recommend {
+      font-size: 10px;
+      color: var(--accent);
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ── Connectivity Metrics ─────────────────── */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .metric-card {
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .metric-card .label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+
+    .metric-card .value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .metric-card .sub-val {
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    /* ── Connectivity Bar Chart ───────────────── */
+    .conn-chart {
+      margin-top: 12px;
+    }
+
+    .conn-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 8px;
+    }
+
+    .conn-label {
+      font-size: 11px;
+      font-weight: 500;
+      min-width: 48px;
+    }
+
+    .conn-bar-bg {
+      flex: 1;
+      height: 20px;
+      background: var(--surface2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .conn-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      min-width: 1px;
+    }
+
+    .conn-pct {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      min-width: 44px;
+      text-align: right;
+      font-weight: 500;
+    }
+
+    /* ── Scope Toggle ─────────────────────────── */
+    .scope-toggle {
+      display: flex;
+      background: var(--surface2);
+      border-radius: 6px;
+      padding: 2px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .scope-btn {
+      flex: 1;
+      padding: 6px 8px;
+      font-size: 11px;
+      font-weight: 500;
+      text-align: center;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: var(--text-dim);
+      border: none;
+      background: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .scope-btn.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* ── Legend ────────────────────────────────── */
+    .legend {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+    }
+
+    /* ── Map Legend ────────────────────────────── */
+    .map-legend {
+      position: absolute;
+      bottom: 28px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-radius: 8px;
+      padding: 12px 14px;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .map-legend-title {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .map-legend-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 11px;
+      color: #444;
+    }
+
+    .map-legend-line {
+      width: 20px;
+      height: 3px;
+      border-radius: 2px;
+    }
+
+    /* ── Loading Overlay ──────────────────────── */
+    #loading {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    #loading.hidden {
+      display: none;
+    }
+
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    #loading span {
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    /* ── LTS Loading indicator on map ─────────── */
+    #lts-loading {
+      display: none;
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 17, 23, 0.9);
+      color: var(--text-dim);
+      font-size: 12px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="loading">
+    <div class="spinner"></div>
+    <span>Loading Belfast cycling network…</span>
+  </div>
+
+  <div id="app">
+    <!-- Left Panel -->
+    <div id="panel">
+      <div class="panel-header">
+        <h1>Belfast Cycling Connectivity</h1>
+        <div class="sub">Mekuria et al. (2012) — LTS Network Analysis</div>
+      </div>
+
+      <!-- SDZ Selector -->
+      <div class="panel-section">
+        <h2>Select SDZ</h2>
+        <select id="sdz-select">
+          <option value="">— Click map or select zone —</option>
+        </select>
+        <div class="sdz-info" id="sdz-info">
+          <div class="sdz-name" id="sdz-name"></div>
+          <div class="sdz-code" id="sdz-code-display"></div>
+          <div class="sdz-dea" id="sdz-dea"></div>
+        </div>
+      </div>
+
+      <!-- LTS Distribution -->
+      <div class="panel-section">
+        <h2>LTS Distribution (Selected SDZ)</h2>
+        <div class="lts-chart" id="lts-chart">
+          <div class="lts-bar-group">
+            <div class="lts-bar-val" id="lts1-val">-</div>
+            <div class="lts-bar" id="lts1-bar" style="background:var(--lts1);height:2px"></div>
+            <div class="lts-bar-label">LTS 1</div>
+          </div>
+          <div class="lts-bar-group">
+            <div class="lts-bar-val" id="lts2-val">-</div>
+            <div class="lts-bar" id="lts2-bar" style="background:var(--lts2);height:2px"></div>
+            <div class="lts-bar-label">LTS 2</div>
+          </div>
+          <div class="lts-bar-group">
+            <div class="lts-bar-val" id="lts3-val">-</div>
+            <div class="lts-bar" id="lts3-bar" style="background:var(--lts3);height:2px"></div>
+            <div class="lts-bar-label">LTS 3</div>
+          </div>
+          <div class="lts-bar-group">
+            <div class="lts-bar-val" id="lts4-val">-</div>
+            <div class="lts-bar" id="lts4-bar" style="background:var(--lts4);height:2px"></div>
+            <div class="lts-bar-label">LTS 4</div>
+          </div>
+        </div>
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--lts1)"></div>Low stress
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--lts2)"></div>Moderate
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--lts3)"></div>High
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--lts4)"></div>Very high
+          </div>
+        </div>
+      </div>
+
+      <!-- Detour Slider -->
+      <div class="panel-section">
+        <h2>
+          Detour Tolerance
+          <span class="info-icon">?
+            <span class="tooltip">
+              <strong>What is detour tolerance?</strong><br><br>
+              A route is considered "connected" only if a low-stress path exists
+              that doesn't exceed the shortest possible route by more than this
+              percentage. For example, at 125%, a 10 km shortest route allows a
+              low-stress alternative up to 12.5 km.<br><br>
+              For short trips, an absolute tolerance of 530 m (0.33 miles) is
+              also applied, whichever is more generous.<br><br>
+              <strong>Recommended: 125%</strong> (Mekuria et al. 2012 default)
+            </span>
+          </span>
+        </h2>
+        <div class="slider-container">
+          <div class="slider-row">
+            <input type="range" id="detour-slider" min="100" max="300" value="125" step="5">
+            <div class="slider-val" id="detour-val">125%</div>
+          </div>
+          <div class="slider-hint">
+            <span>100% (no detour)</span>
+            <span>300% (3× path)</span>
+          </div>
+          <div class="slider-recommend">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5" />
+              <path d="M6 4v3M6 8.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            Recommended: 125% (Mekuria et al. 2012)
+          </div>
+        </div>
+      </div>
+
+      <!-- Connectivity Metrics -->
+      <div class="panel-section">
+        <h2 id="conn-title">Connectivity — All Belfast</h2>
+        <div class="scope-toggle">
+          <button class="scope-btn active" data-scope="all" onclick="setScope('all')">All Belfast</button>
+          <button class="scope-btn" data-scope="sdz" onclick="setScope('sdz')">Selected SDZ</button>
+        </div>
+
+        <div class="conn-chart" id="conn-chart">
+          <div class="conn-row">
+            <div class="conn-label" style="color:var(--lts1)">LTS ≤1</div>
+            <div class="conn-bar-bg">
+              <div class="conn-bar-fill" id="conn-bar-1" style="background:var(--lts1);width:0%"></div>
+            </div>
+            <div class="conn-pct" id="conn-pct-1">-</div>
+          </div>
+          <div class="conn-row">
+            <div class="conn-label" style="color:var(--lts2)">LTS ≤2</div>
+            <div class="conn-bar-bg">
+              <div class="conn-bar-fill" id="conn-bar-2" style="background:var(--lts2);width:0%"></div>
+            </div>
+            <div class="conn-pct" id="conn-pct-2">-</div>
+          </div>
+          <div class="conn-row">
+            <div class="conn-label" style="color:var(--lts3)">LTS ≤3</div>
+            <div class="conn-bar-bg">
+              <div class="conn-bar-fill" id="conn-bar-3" style="background:var(--lts3);width:0%"></div>
+            </div>
+            <div class="conn-pct" id="conn-pct-3">-</div>
+          </div>
+          <div class="conn-row">
+            <div class="conn-label" style="color:var(--lts4)">LTS ≤4</div>
+            <div class="conn-bar-bg">
+              <div class="conn-bar-fill" id="conn-bar-4" style="background:var(--lts4);width:0%"></div>
+            </div>
+            <div class="conn-pct" id="conn-pct-4">-</div>
+          </div>
+        </div>
+
+        <div class="metric-grid">
+          <div class="metric-card">
+            <div class="label">% Trips Conn. (LTS≤3)</div>
+            <div class="value" id="metric-trips" style="color:var(--accent)">-</div>
+            <div class="sub-val" id="metric-trips-sub"></div>
+          </div>
+          <div class="metric-card">
+            <div class="label">% Nodes Conn. (LTS≤3)</div>
+            <div class="value" id="metric-nodes" style="color:var(--accent)">-</div>
+            <div class="sub-val" id="metric-nodes-sub"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-section" style="border-bottom:none; flex:1;">
+        <h2>About</h2>
+        <p style="font-size:11px;color:var(--text-dim);line-height:1.6;">
+          Two points are <em>connected</em> at a given LTS level if a path exists
+          using only edges ≤ that stress level, without exceeding the detour
+          tolerance. Data: Census 2021 OD flows (ODWP01), OSM road network.
+          <br><br>
+          Methodology: Mekuria, Furth & Nixon (2012).
+          <br>Author: Zhengpei (Pippin) Xu — UCL CASA
+        </p>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div id="map-container">
+      <div id="map"></div>
+      <div id="lts-loading">Loading LTS network…</div>
+      <div class="map-legend">
+        <div class="map-legend-title">Level of Traffic Stress</div>
+        <div class="map-legend-row">
+          <div class="map-legend-line" style="background:#2ecc71"></div>LTS 1 — Low stress
+        </div>
+        <div class="map-legend-row">
+          <div class="map-legend-line" style="background:#f1c40f"></div>LTS 2 — Moderate
+        </div>
+        <div class="map-legend-row">
+          <div class="map-legend-line" style="background:#e67e22"></div>LTS 3 — High stress
+        </div>
+        <div class="map-legend-row">
+          <div class="map-legend-line" style="background:#e74c3c"></div>LTS 4 — Very high
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── Globals ──────────────────────────────────────────────────────────────────
+    let map, sdzLayer, selectedSdz = null, highlightLayer = null;
+    let sdzData = null, odData = null;
+    let currentScope = 'all';
+    const DETOUR_ABS_M = 530;
+    const LTS_COLORS = { 1: '#2ecc71', 2: '#f1c40f', 3: '#e67e22', 4: '#e74c3c' };
+
+    // ── Load data ────────────────────────────────────────────────────────────────
+    async function loadData() {
+      const [sdzResp, odResp] = await Promise.all([
+        fetch('sdz_data.json'),
+        fetch('od_data.json'),
+      ]);
+      sdzData = await sdzResp.json();
+      odData = await odResp.json();
+    }
+
+    // ── Map setup ────────────────────────────────────────────────────────────────
+    function initMap() {
+      map = L.map('map', {
+        zoomControl: false,
+        attributionControl: true,
+      }).setView([54.597, -5.93], 12);
+
+      L.control.zoom({ position: 'topright' }).addTo(map);
+
+      // White / light basemap
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; OpenStreetMap &copy; CARTO',
+        maxZoom: 19,
+      }).addTo(map);
+
+      // SDZ polygons
+      sdzLayer = L.geoJSON(sdzData, {
+        style: () => ({
+          fillColor: '#000000',
+          fillOpacity: 0.02,
+          color: '#333333',
+          weight: 0.8,
+          opacity: 0.4,
+        }),
+        onEachFeature: (feature, layer) => {
+          layer.on('click', () => selectSDZ(feature.properties.sdz2021_cd));
+          layer.on('mouseover', e => {
+            if (feature.properties.sdz2021_cd !== selectedSdz) {
+              e.target.setStyle({ fillOpacity: 0.1, weight: 1.5, color: '#6c8cff' });
+            }
+          });
+          layer.on('mouseout', e => {
+            if (feature.properties.sdz2021_cd !== selectedSdz) {
+              e.target.setStyle({ fillOpacity: 0.02, weight: 0.8, color: '#333333' });
+            }
+          });
+        },
+      }).addTo(map);
+
+      // Populate dropdown
+      const select = document.getElementById('sdz-select');
+      const zones = sdzData.features
+        .map(f => ({ code: f.properties.sdz2021_cd, name: f.properties.sdz2021_nm }))
+        .sort((a, b) => a.name.localeCompare(b.name));
+      zones.forEach(z => {
+        const opt = document.createElement('option');
+        opt.value = z.code;
+        opt.textContent = `${z.name} (${z.code})`;
+        select.appendChild(opt);
+      });
+      select.addEventListener('change', e => {
+        if (e.target.value) selectSDZ(e.target.value);
+      });
+
+      // Load LTS network asynchronously (large file)
+      loadLTSNetwork();
+    }
+
+    // ── Load LTS Network ─────────────────────────────────────────────────────────
+    async function loadLTSNetwork() {
+      const indicator = document.getElementById('lts-loading');
+      indicator.style.display = 'block';
+
+      try {
+        const resp = await fetch('lts_network.json');
+        const ltsData = await resp.json();
+
+        L.geoJSON(ltsData, {
+          style: feature => ({
+            color: LTS_COLORS[feature.properties.lts] || '#999',
+            weight: 1.4,
+            opacity: 0.7,
+          }),
+          interactive: false, // no click/hover — performance
+        }).addTo(map);
+
+        // Bring SDZ layer to front so it's clickable
+        sdzLayer.bringToFront();
+      } catch (err) {
+        console.warn('LTS network not loaded:', err);
+      }
+
+      indicator.style.display = 'none';
+    }
+
+    // ── Select SDZ ───────────────────────────────────────────────────────────────
+    function selectSDZ(code) {
+      selectedSdz = code;
+      document.getElementById('sdz-select').value = code;
+
+      // Reset all SDZ styles
+      sdzLayer.eachLayer(layer => {
+        layer.setStyle({ fillOpacity: 0.02, weight: 0.8, color: '#333333' });
+      });
+
+      // Remove old highlight
+      if (highlightLayer) map.removeLayer(highlightLayer);
+
+      const feature = sdzData.features.find(f => f.properties.sdz2021_cd === code);
+      if (!feature) return;
+
+      // Fly to selected SDZ
+      const targetLayer = L.geoJSON(feature);
+      map.flyToBounds(targetLayer.getBounds().pad(0.5), { duration: 0.8 });
+
+      // Add bold highlight border
+      highlightLayer = L.geoJSON(feature, {
+        style: {
+          fillColor: '#6c8cff',
+          fillOpacity: 0.08,
+          color: '#6c8cff',
+          weight: 3.5,
+          opacity: 1,
+        },
+      }).addTo(map);
+
+      // Update info card
+      const props = feature.properties;
+      document.getElementById('sdz-info').classList.add('active');
+      document.getElementById('sdz-name').textContent = props.sdz2021_nm;
+      document.getElementById('sdz-code-display').textContent = props.sdz2021_cd;
+      document.getElementById('sdz-dea').textContent = `DEA: ${props.dea2014_nm || 'N/A'}`;
+
+      // Update LTS chart
+      updateLTSChart(props);
+
+      // Update connectivity
+      updateConnectivity();
+    }
+
+    // ── LTS Distribution Chart ───────────────────────────────────────────────────
+    function updateLTSChart(props) {
+      const counts = [
+        props.lts_1_count || 0,
+        props.lts_2_count || 0,
+        props.lts_3_count || 0,
+        props.lts_4_count || 0,
+      ];
+      const maxCount = Math.max(...counts, 1);
+      for (let i = 0; i < 4; i++) {
+        const pct = (counts[i] / maxCount) * 80;
+        document.getElementById(`lts${i + 1}-bar`).style.height = Math.max(pct, 2) + 'px';
+        document.getElementById(`lts${i + 1}-val`).textContent = counts[i];
+      }
+    }
+
+    // ── Connectivity Calculation ─────────────────────────────────────────────────
+    function computeConnectivity(detourPct, filterSdz = null) {
+      const ratio = detourPct / 100;
+      const results = { trips: [0, 0, 0, 0], nodes: [0, 0, 0, 0], totalTrips: 0, totalPairs: 0 };
+
+      for (const od of odData) {
+        if (filterSdz && od.origin_sdz !== filterSdz) continue;
+
+        results.totalTrips += od.count;
+        results.totalPairs += 1;
+
+        const dFull = od.dist_full;
+        for (let lts = 1; lts <= 4; lts++) {
+          const dSub = od[`dist_lts${lts}`];
+          if (dSub < 0) continue; // -1 = inf
+          const maxAllowed = Math.max(dFull * ratio, dFull + DETOUR_ABS_M);
+          if (dSub <= maxAllowed) {
+            results.trips[lts - 1] += od.count;
+            results.nodes[lts - 1] += 1;
+          }
+        }
+      }
+      return results;
+    }
+
+    function updateConnectivity() {
+      const detourPct = parseInt(document.getElementById('detour-slider').value);
+      const filterSdz = currentScope === 'sdz' ? selectedSdz : null;
+      const res = computeConnectivity(detourPct, filterSdz);
+
+      if (res.totalPairs === 0) {
+        for (let i = 1; i <= 4; i++) {
+          document.getElementById(`conn-bar-${i}`).style.width = '0%';
+          document.getElementById(`conn-pct-${i}`).textContent = '-';
+        }
+        document.getElementById('metric-trips').textContent = '-';
+        document.getElementById('metric-nodes').textContent = '-';
+        document.getElementById('metric-trips-sub').textContent = '';
+        document.getElementById('metric-nodes-sub').textContent = '';
+        return;
+      }
+
+      for (let i = 1; i <= 4; i++) {
+        const pctTrips = (res.trips[i - 1] / res.totalTrips * 100);
+        document.getElementById(`conn-bar-${i}`).style.width = pctTrips + '%';
+        document.getElementById(`conn-pct-${i}`).textContent = pctTrips.toFixed(1) + '%';
+      }
+
+      const tripsPct2 = (res.trips[2] / res.totalTrips * 100);
+      const nodesPct2 = (res.nodes[2] / res.totalPairs * 100);
+      document.getElementById('metric-trips').textContent = tripsPct2.toFixed(1) + '%';
+      document.getElementById('metric-nodes').textContent = nodesPct2.toFixed(1) + '%';
+      document.getElementById('metric-trips-sub').textContent =
+        `${res.trips[2].toLocaleString()} / ${res.totalTrips.toLocaleString()}`;
+      document.getElementById('metric-nodes-sub').textContent =
+        `${res.nodes[2].toLocaleString()} / ${res.totalPairs.toLocaleString()}`;
+    }
+
+    // ── Scope Toggle ─────────────────────────────────────────────────────────────
+    function setScope(scope) {
+      currentScope = scope;
+      document.querySelectorAll('.scope-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.scope === scope);
+      });
+
+      const h2 = document.getElementById('conn-title');
+      if (scope === 'sdz' && selectedSdz) {
+        const feat = sdzData.features.find(f => f.properties.sdz2021_cd === selectedSdz);
+        h2.textContent = `Connectivity — ${feat ? feat.properties.sdz2021_nm : selectedSdz}`;
+      } else {
+        h2.textContent = 'Connectivity — All Belfast';
+      }
+      updateConnectivity();
+    }
+
+    // ── Detour Slider ────────────────────────────────────────────────────────────
+    document.getElementById('detour-slider').addEventListener('input', e => {
+      document.getElementById('detour-val').textContent = e.target.value + '%';
+      updateConnectivity();
+    });
+
+    // ── Init ─────────────────────────────────────────────────────────────────────
+    async function init() {
+      try {
+        await loadData();
+        initMap();
+        updateConnectivity();
+        document.getElementById('loading').classList.add('hidden');
+      } catch (err) {
+        console.error('Init error:', err);
+        document.getElementById('loading').innerHTML =
+          `<span style="color:#e74c3c">Error loading data. Ensure sdz_data.json, od_data.json, and lts_network.json are in the same folder.</span>`;
+      }
+    }
+
+    init();
+  </script>
+</body>
+
+</html>
