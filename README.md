@@ -24,7 +24,7 @@ Explore Belfast's cycling network interactively:
 
 ### 📝 Project Website (Quarto)
 
-👉 **[View Full Report](https://your-username.github.io/belfast-cycle-network/)**
+👉 **[View Full Report](https://zhengpei-xu.github.io/PCTNI/_site/index.html)**
 
 The Quarto site includes the project overview, LTS methodology background, and full technical notebooks with code and commentary.
 
@@ -35,8 +35,8 @@ The Quarto site includes the project overview, LTS methodology background, and f
 | LTS Threshold | % Trips Connected | % Nodes Connected | Who Can Ride? |
 |:---:|:---:|:---:|:---|
 | LTS ≤ 1 | 0.0% | 0.0% | Children / all ages and abilities |
-| LTS ≤ 2 | 0.1% | 0.1% | Mainstream adult population |
-| LTS ≤ 3 | 6.0% | 6.0% | Confident, experienced cyclists |
+| LTS ≤ 2 | 0.7% | 0.8% | Mainstream adult population |
+| LTS ≤ 3 | 7.9% | 8.3% | Confident, experienced cyclists |
 | LTS ≤ 4 | 100% | 100% | All roads, no filtering |
 
 Belfast has plenty of quiet residential streets — but they don't form a connected network. Cyclists are forced onto high-stress arterials to complete their journeys. Even at LTS ≤ 3, only 6% of commuting trips can be served without excessive detour.
@@ -87,8 +87,9 @@ belfast-cycle-network/
 ├── README.md
 ├── _quarto.yml                          # Quarto site config
 ├── index.qmd                            # Landing page
+├── .nojekyll                            # Force GitHub Pages to bypass Jekyll
 │
-├── notebooks/
+├── Code/
 │   ├── lts_background.ipynb             # What is LTS? (methodology)
 │   ├── belfast_cycle_lts_assessment.ipynb    # LTS classification
 │   └── belfast_percent_trips_connected.ipynb # Connectivity analysis
@@ -110,7 +111,7 @@ belfast-cycle-network/
     ├── Belfast_LTS.png
     ├── belfast_connectivity_metrics.png
     ├── belfast_sdz_connectivity_choropleth.png
-    └── *.csv
+    └── *.png
 ```
 
 ---
@@ -131,8 +132,7 @@ belfast-cycle-network/
 
 ```bash
 conda create -n urbsim python=3.11
-conda activate urbsim
-pip install geopandas osmnx pyrosm igraph networkx scipy pandas matplotlib seaborn folium
+pip install geopandas osmnx pyrosm igraph networkx scipy pandas matplotlib seaborn folium 
 ```
 
 ### Steps
@@ -150,7 +150,6 @@ pip install geopandas osmnx pyrosm igraph networkx scipy pandas matplotlib seabo
 - Mekuria, M. C., Furth, P. G. & Nixon, H. (2012). *Low-Stress Bicycling and Network Connectivity*. Mineta Transportation Institute Report 11-19.
 - Conveyal (2015). *Estimated Level of Traffic Stress*. https://docs.conveyal.com/learn-more/traffic-stress
 - Jeong, P. & Smith, D. (2025). *Improving Infrastructure and Accessibility Indicators for Urban Cycling Networks*. CASA Working Paper 242.
-- Department for Transport (2020). *LTN 1/20: Cycle Infrastructure Design*.
 
 ---
 
