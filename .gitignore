@@ -222,6 +222,9 @@ __marimo__/
 *.Rds,
 *.parquet
 *.json
+!lts_network.json
+!od_data.json
+!sdz_data.json
 
 Data/
 Code/cache/
