@@ -14,6 +14,8 @@ website:
     left:
       - href: index.qmd
         text: "Home"
+      - href: https://zhengpei-xu.github.io//PCTNI/belfast-cycling-dashboard/belfast_lts_connectivity_dashboard.html
+        text: "Belfast LTS Connectivity Explorer"
     right:
       - icon: github
         href: https://github.com/zhengpei-xu
@@ -26,9 +28,12 @@ website:
           - index.qmd
       - section: "Technical Analysis"
         contents:
+          - text: "LTS Background"
+            href: Code/lts_background.ipynb
           - text: "LTS Classification"
             href: Code/belfast_cycle_lts_assessment.ipynb
-          - notebooks/test.ipynb
+          - text: "Connectivity Measuring"
+            href: Code/belfast_lts_connectivity_measuring.ipynb
 
 # 3. HTML Formatting and Styles
 format:

@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Zhengpei (Pippin) Xu">
+
+<title>Belfast Cycling Network — Percent Trips Connected (Mekuria et al.&nbsp;2012) – Belfast Active Travel Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../image/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a7281f73fbf789bb9bb8274f338da690.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<style>
+  /* Force pure black navbar */
+  .navbar {
+    background-color: #000000 !important;
+  }
+
+  /* Hide the dark mode toggle button */
+  .quarto-color-scheme-toggle {
+    display: none !important;
+  }
+
+  /* Match callout-tip to theme accent */
+  .callout-tip {
+    border-left-color: #2c3e50 !important;
+    background-color: #ffffff !important;
+  }
+  .callout-tip .callout-icon::before {
+    color: #2c3e50 !important;
+  }
+  .callout-tip .callout-title {
+    color: #2c3e50 !important;
+  }
+</style>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Belfast Active Travel Research</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://zhengpei-xu.github.io//PCTNI/belfast-cycling-dashboard/belfast_lts_connectivity_dashboard.html"> 
+<span class="menu-text">Belfast LTS Connectivity Explorer</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/zhengpei-xu"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Code/lts_background.html">Technical Analysis</a></li><li class="breadcrumb-item"><a href="../Code/belfast_lts_connectivity_measuring.html">Connectivity Measuring</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Overview</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Belfast Cycle Network Assessment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Technical Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Code/lts_background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LTS Background</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Code/belfast_cycle_lts_assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LTS Classification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Code/belfast_lts_connectivity_measuring.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Connectivity Measuring</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#methodology-overview" id="toc-methodology-overview" class="nav-link active" data-scroll-target="#methodology-overview">Methodology Overview</a>
+  <ul class="collapse">
+  <li><a href="#graph-construction-why-two-data-sources" id="toc-graph-construction-why-two-data-sources" class="nav-link" data-scroll-target="#graph-construction-why-two-data-sources">Graph Construction — Why Two Data Sources?</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a></li>
+  <li><a href="#pipeline" id="toc-pipeline" class="nav-link" data-scroll-target="#pipeline">Pipeline</a></li>
+  </ul></li>
+  <li><a href="#environment-setup" id="toc-environment-setup" class="nav-link" data-scroll-target="#environment-setup">Environment Setup</a></li>
+  <li><a href="#load-data" id="toc-load-data" class="nav-link" data-scroll-target="#load-data">Load Data</a>
+  <ul class="collapse">
+  <li><a href="#lts-network-pyrosm" id="toc-lts-network-pyrosm" class="nav-link" data-scroll-target="#lts-network-pyrosm">LTS Network (pyrosm)</a></li>
+  <li><a href="#study-area-belfast-lgd-zones" id="toc-study-area-belfast-lgd-zones" class="nav-link" data-scroll-target="#study-area-belfast-lgd-zones">Study Area — Belfast LGD Zones</a></li>
+  <li><a href="#od-commuting-data" id="toc-od-commuting-data" class="nav-link" data-scroll-target="#od-commuting-data">OD Commuting Data</a></li>
+  </ul></li>
+  <li><a href="#od-data-preparation" id="toc-od-data-preparation" class="nav-link" data-scroll-target="#od-data-preparation">OD Data Preparation</a></li>
+  <li><a href="#build-routable-graph" id="toc-build-routable-graph" class="nav-link" data-scroll-target="#build-routable-graph">Build Routable Graph</a>
+  <ul class="collapse">
+  <li><a href="#extract-osmnx-graph" id="toc-extract-osmnx-graph" class="nav-link" data-scroll-target="#extract-osmnx-graph">Extract OSMnx Graph</a></li>
+  <li><a href="#transfer-lts-values-via-nearest-neighbour-matching" id="toc-transfer-lts-values-via-nearest-neighbour-matching" class="nav-link" data-scroll-target="#transfer-lts-values-via-nearest-neighbour-matching">Transfer LTS Values via Nearest-Neighbour Matching</a></li>
+  <li><a href="#highway-type-fallback-for-unmatched-edges" id="toc-highway-type-fallback-for-unmatched-edges" class="nav-link" data-scroll-target="#highway-type-fallback-for-unmatched-edges">Highway-Type Fallback for Unmatched Edges</a></li>
+  <li><a href="#build-igraph-using-uv-node-ids" id="toc-build-igraph-using-uv-node-ids" class="nav-link" data-scroll-target="#build-igraph-using-uv-node-ids">Build igraph Using <code>u</code>/<code>v</code> Node IDs</a></li>
+  </ul></li>
+  <li><a href="#snap-sdz-centroids-to-network" id="toc-snap-sdz-centroids-to-network" class="nav-link" data-scroll-target="#snap-sdz-centroids-to-network">Snap SDZ Centroids to Network</a></li>
+  <li><a href="#connectivity-analysis" id="toc-connectivity-analysis" class="nav-link" data-scroll-target="#connectivity-analysis">Connectivity Analysis</a>
+  <ul class="collapse">
+  <li><a href="#core-algorithm" id="toc-core-algorithm" class="nav-link" data-scroll-target="#core-algorithm">Core Algorithm</a></li>
+  </ul></li>
+  <li><a href="#summary-metrics" id="toc-summary-metrics" class="nav-link" data-scroll-target="#summary-metrics">Summary Metrics</a></li>
+  <li><a href="#visualisation" id="toc-visualisation" class="nav-link" data-scroll-target="#visualisation">Visualisation</a>
+  <ul class="collapse">
+  <li><a href="#percent-trips-connected-percent-nodes-connected" id="toc-percent-trips-connected-percent-nodes-connected" class="nav-link" data-scroll-target="#percent-trips-connected-percent-nodes-connected">Percent Trips Connected &amp; Percent Nodes Connected</a></li>
+  <li><a href="#per-sdz-connectivity-score" id="toc-per-sdz-connectivity-score" class="nav-link" data-scroll-target="#per-sdz-connectivity-score">Per-SDZ Connectivity Score</a></li>
+  <li><a href="#export-results-for-dashboard" id="toc-export-results-for-dashboard" class="nav-link" data-scroll-target="#export-results-for-dashboard">Export Results for Dashboard</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Code/lts_background.html">Technical Analysis</a></li><li class="breadcrumb-item"><a href="../Code/belfast_lts_connectivity_measuring.html">Connectivity Measuring</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Belfast Cycling Network — Percent Trips Connected (Mekuria et al.&nbsp;2012)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Zhengpei (Pippin) Xu </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this notebook I compute the <strong>Percent Trips Connected</strong> and <strong>Percent Nodes Connected</strong> metrics following the methodology of Mekuria, Furth &amp; Nixon (2012), applied to the Belfast Local Government District.</p>
+<section id="methodology-overview" class="level2">
+<h2 class="anchored" data-anchor-id="methodology-overview">Methodology Overview</h2>
+<p>Two points are said to be <em>connected</em> at a given LTS level if there exists a path between them using only links that do not exceed that level of stress, and the path does not involve undue detour. The detour criterion requires that the low-stress path length must not exceed the shortest (all-network) path by more than <strong>25%</strong>, or for short trips, <strong>0.53 km (0.33 miles)</strong>.</p>
+<p><strong>Percent Trips Connected</strong> is the share of total commuting demand that can be served by a connected, low-stress route at each LTS threshold, weighted by Census 2021 commuting flow. <strong>Percent Nodes Connected</strong> is the unweighted share of OD pairs that satisfy the same criterion.</p>
+<section id="graph-construction-why-two-data-sources" class="level3">
+<h3 class="anchored" data-anchor-id="graph-construction-why-two-data-sources">Graph Construction — Why Two Data Sources?</h3>
+<p>The LTS classification in the companion notebook (<code>belfast_cycle_lts_assessment.ipynb</code>) was produced from a pyrosm PBF extract. PBF files are complete snapshots of the OSM database and preserve all attribute tags (<code>maxspeed</code>, <code>lanes</code>, <code>cycleway</code>, etc.), yielding more accurate LTS values. However, pyrosm returns edges as independent line segments <strong>without shared node IDs</strong>, so the resulting graph is topologically fragmented — in Belfast I observed over 13,000 disconnected components, with the largest covering only 11% of vertices. This makes routing and connectivity analysis impossible.</p>
+<p>OSMnx, by contrast, extracts a graph with explicit <code>u</code>/<code>v</code> node identifiers that guarantee topological connectivity. However, OSMnx pulls only the tags listed in <code>ox.settings.useful_tags_way</code>, so some attributes are lost, leading to less accurate LTS classification if I were to re-run the pipeline on OSMnx edges directly.</p>
+<p>My solution is a <strong>hybrid approach</strong>: I use the OSMnx graph for topology (ensuring a single connected component), and transfer the pyrosm-derived LTS values onto it via spatial join. This achieves a 100% match rate.</p>
+</section>
+<section id="data-sources" class="level3">
+<h3 class="anchored" data-anchor-id="data-sources">Data Sources</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dataset</th>
+<th>Source</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LTS network (pyrosm)</td>
+<td><code>belfast_cycle_lts_assessment.ipynb</code> output</td>
+<td>Accurate LTS values</td>
+</tr>
+<tr class="even">
+<td>Road graph (OSMnx)</td>
+<td>Overpass API via OSMnx</td>
+<td>Topological connectivity</td>
+</tr>
+<tr class="odd">
+<td>OD commuting flows</td>
+<td>PCTNI / Census 2021 ODWP01</td>
+<td>Demand (SDZ level)</td>
+</tr>
+<tr class="even">
+<td>SDZ boundaries</td>
+<td>PCTNI <code>zones_sdz.gpkg</code></td>
+<td>Spatial units</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="pipeline">Pipeline</h3>
+<ol type="1">
+<li>Load pyrosm LTS network, SDZ boundaries, and OD data</li>
+<li>Filter OD pairs to Belfast LGD; exclude intra-zone trips</li>
+<li>Extract OSMnx graph for Belfast (connected topology)</li>
+<li>Transfer pyrosm LTS values to OSMnx edges via spatial join</li>
+<li>Apply highway-type fallback for unmatched edges</li>
+<li>Build igraph from OSMnx <code>u</code>/<code>v</code> node IDs</li>
+<li>Snap SDZ centroids to nearest network node</li>
+<li>For each LTS threshold (1–4), compute connectivity with detour criterion</li>
+<li>Calculate Percent Trips Connected and Percent Nodes Connected</li>
+<li>Visualise and export results</li>
+</ol>
+</section>
+</section>
+<section id="environment-setup" class="level2">
+<h2 class="anchored" data-anchor-id="environment-setup">Environment Setup</h2>
+<div id="cell-3" class="cell" data-execution_count="55">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shapely.geometry <span class="im">import</span> Point</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> igraph <span class="im">as</span> ig</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> osmnx <span class="im">as</span> ox</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>ox.settings.use_cache <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>ox.settings.log_console <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> defaultdict</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Project paths</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>DATA_DIR <span class="op">=</span> Path(<span class="st">'../Data'</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>OUTPUT_DIR <span class="op">=</span> Path(<span class="st">'../Figure'</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>DATA_DIR.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>OUTPUT_DIR.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Coordinate reference systems</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>CRS_WGS84 <span class="op">=</span> <span class="st">'EPSG:4326'</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>CRS_IG    <span class="op">=</span> <span class="st">'EPSG:29903'</span>   <span class="co"># Irish Grid — all spatial ops use this</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Environment ready.'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Environment ready.</code></pre>
+</div>
+</div>
+</section>
+<section id="load-data" class="level2">
+<h2 class="anchored" data-anchor-id="load-data">Load Data</h2>
+<section id="lts-network-pyrosm" class="level3">
+<h3 class="anchored" data-anchor-id="lts-network-pyrosm">LTS Network (pyrosm)</h3>
+<p>I load the LTS-classified cycling network produced by the companion notebook. Each edge has an <code>lts</code> column (1–4) and geometry. These LTS values were derived from a full PBF extract which preserves all OSM tags, so they are more accurate than what I could obtain from OSMnx alone.</p>
+<div id="cell-5" class="cell" data-execution_count="56">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Load the pyrosm LTS-classified network ────────────────────────────────────</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>edges_lts <span class="op">=</span> gpd.read_parquet(DATA_DIR <span class="op">/</span> <span class="st">'LTS_Belfast.parquet'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>edges_lts <span class="op">=</span> edges_lts.to_crs(CRS_IG)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Pyrosm edges: </span><span class="sc">{</span><span class="bu">len</span>(edges_lts)<span class="sc">:,}</span><span class="ss">'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">LTS distribution:'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(edges_lts[<span class="st">'lts'</span>].value_counts().sort_index())</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">NaN LTS: </span><span class="sc">{</span>edges_lts[<span class="st">"lts"</span>]<span class="sc">.</span>isna()<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">:,}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Pyrosm edges: 23,464
+
+LTS distribution:
+lts
+1.0    9752
+2.0    9886
+3.0    1528
+4.0    2298
+Name: count, dtype: int64
+
+NaN LTS: 0</code></pre>
+</div>
+</div>
+</section>
+<section id="study-area-belfast-lgd-zones" class="level3">
+<h3 class="anchored" data-anchor-id="study-area-belfast-lgd-zones">Study Area — Belfast LGD Zones</h3>
+<div id="cell-7" class="cell" data-execution_count="32">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── SDZ zones ────────────────────────────────────────────────────────────────</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sdz_all <span class="op">=</span> gpd.read_file(DATA_DIR <span class="op">/</span> <span class="st">'zones_sdz.gpkg'</span>, engine<span class="op">=</span><span class="st">'pyogrio'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sdz_all <span class="op">=</span> sdz_all.to_crs(CRS_IG)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>belfast_sdz <span class="op">=</span> sdz_all[sdz_all[<span class="st">'lgd2014_nm'</span>] <span class="op">==</span> <span class="st">'Belfast'</span>].copy()</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>belfast_boundary <span class="op">=</span> belfast_sdz.unary_union</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify SDZ code column</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>sdz_code_col <span class="op">=</span> [c <span class="cf">for</span> c <span class="kw">in</span> belfast_sdz.columns <span class="cf">if</span> <span class="st">'sdz'</span> <span class="kw">in</span> c.lower() <span class="kw">and</span> <span class="st">'code'</span> <span class="kw">in</span> c.lower()]</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>sdz_code_col <span class="op">=</span> sdz_code_col[<span class="dv">0</span>] <span class="cf">if</span> sdz_code_col <span class="cf">else</span> belfast_sdz.columns[<span class="dv">0</span>]</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Belfast SDZ count: </span><span class="sc">{</span><span class="bu">len</span>(belfast_sdz)<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'SDZ code column: "</span><span class="sc">{</span>sdz_code_col<span class="sc">}</span><span class="ss">"'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Belfast SDZ count: 175
+SDZ code column: "sdz2021_cd"</code></pre>
+</div>
+</div>
+</section>
+<section id="od-commuting-data" class="level3">
+<h3 class="anchored" data-anchor-id="od-commuting-data">OD Commuting Data</h3>
+<p>I use the Census 2021 OD flows from the PCTNI hackathon dataset. This filtered version retains only <code>place_of_work_ind_code == 4</code> (fixed workplace within UK), with both origin and destination coded at SDZ level.</p>
+<div id="cell-9" class="cell" data-execution_count="33">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── OD data ──────────────────────────────────────────────────────────────────</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>od_raw <span class="op">=</span> pd.read_csv(DATA_DIR <span class="op">/</span> <span class="st">'od_ni_open_filtered.csv'</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Total OD records: </span><span class="sc">{</span><span class="bu">len</span>(od_raw)<span class="sc">:,}</span><span class="ss">'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Total commuters: </span><span class="sc">{</span>od_raw[<span class="st">"count"</span>]<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">:,}</span><span class="ss">'</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>od_raw.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total OD records: 108,656
+Total commuters: 545,210</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">area_of_residence_code</th>
+<th data-quarto-table-cell-role="th">workplace_area_code</th>
+<th data-quarto-table-cell-role="th">place_of_work_ind_code</th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>N21000001</td>
+<td>N21000001</td>
+<td>4</td>
+<td>51</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>N21000001</td>
+<td>N21000002</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>N21000001</td>
+<td>N21000003</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>N21000001</td>
+<td>N21000004</td>
+<td>4</td>
+<td>34</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>N21000001</td>
+<td>N21000005</td>
+<td>4</td>
+<td>28</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="od-data-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="od-data-preparation">OD Data Preparation</h2>
+<p>The Census 2021 OD commuting flows (ODWP01) are recorded at Super Data Zone (SDZ) level — the finest geography available in this dataset. Since the OD codes match <code>zones_sdz.gpkg</code> directly, no spatial aggregation is required. I filter the OD pairs to those with both origin and destination within Belfast LGD, and exclude intra-zone trips following Mekuria et al.&nbsp;(2012) to limit the influence of very short trips for which walking is the dominant mode.</p>
+<div id="cell-11" class="cell" data-execution_count="69">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Filter OD to Belfast: both origin AND destination within Belfast LGD ────</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>belfast_sdz_codes <span class="op">=</span> <span class="bu">set</span>(belfast_sdz[sdz_code_col].values)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>od <span class="op">=</span> od_raw[</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    od_raw[<span class="st">'area_of_residence_code'</span>].isin(belfast_sdz_codes) <span class="op">&amp;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    od_raw[<span class="st">'workplace_area_code'</span>].isin(belfast_sdz_codes)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>].copy()</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>od <span class="op">=</span> od.rename(columns<span class="op">=</span>{</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'area_of_residence_code'</span>: <span class="st">'origin_sdz'</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'workplace_area_code'</span>: <span class="st">'dest_sdz'</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Exclude intra-zone trips (Mekuria et al. 2012)</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>od <span class="op">=</span> od[od[<span class="st">'origin_sdz'</span>] <span class="op">!=</span> od[<span class="st">'dest_sdz'</span>]].copy()</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Belfast inter-SDZ OD pairs: </span><span class="sc">{</span><span class="bu">len</span>(od)<span class="sc">:,}</span><span class="ss">'</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Total inter-SDZ commuters: </span><span class="sc">{</span>od[<span class="st">"count"</span>]<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">:,}</span><span class="ss">'</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Unique origin SDZs: </span><span class="sc">{</span>od[<span class="st">"origin_sdz"</span>]<span class="sc">.</span>nunique()<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Unique destination SDZs: </span><span class="sc">{</span>od[<span class="st">"dest_sdz"</span>]<span class="sc">.</span>nunique()<span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Belfast inter-SDZ OD pairs: 13,412
+Total inter-SDZ commuters: 68,877
+Unique origin SDZs: 175
+Unique destination SDZs: 175</code></pre>
+</div>
+</div>
+</section>
+<section id="build-routable-graph" class="level2">
+<h2 class="anchored" data-anchor-id="build-routable-graph">Build Routable Graph</h2>
+<section id="extract-osmnx-graph" class="level3">
+<h3 class="anchored" data-anchor-id="extract-osmnx-graph">Extract OSMnx Graph</h3>
+<p>The pyrosm-extracted network lacks shared node identifiers, producing a highly fragmented graph (&gt;13,000 disconnected components). To obtain a topologically connected network, I extract the Belfast road graph via OSMnx with <code>network_type='bike'</code>. OSMnx assigns unique node IDs (<code>u</code>, <code>v</code>) to each edge, guaranteeing a single connected component suitable for shortest-path routing.</p>
+<div id="cell-13" class="cell" data-execution_count="70">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Extract Belfast road network via OSMnx ──────────────────────────────────</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>belfast_poly_4326 <span class="op">=</span> belfast_sdz.to_crs(CRS_WGS84).unary_union</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>G_osm <span class="op">=</span> ox.graph_from_polygon(</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    belfast_poly_4326,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    network_type<span class="op">=</span><span class="st">'bike'</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    simplify<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    retain_all<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'OSMnx graph — nodes: </span><span class="sc">{</span>G_osm<span class="sc">.</span>number_of_nodes()<span class="sc">:,}</span><span class="ss">, edges: </span><span class="sc">{</span>G_osm<span class="sc">.</span>number_of_edges()<span class="sc">:,}</span><span class="ss">'</span>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Connected: </span><span class="sc">{</span>nx<span class="sc">.</span>is_connected(G_osm.to_undirected())<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to GeoDataFrames</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>nodes_ox, edges_ox <span class="op">=</span> ox.graph_to_gdfs(G_osm)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>edges_ox <span class="op">=</span> edges_ox.reset_index()  <span class="co"># u, v, key become regular columns</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>edges_ox <span class="op">=</span> edges_ox.to_crs(CRS_IG)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>edges_ox[<span class="st">'length_m'</span>] <span class="op">=</span> edges_ox.geometry.length</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Flatten list-type columns (OSMnx stores some tags as lists)</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> edges_ox.columns:</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> edges_ox[col].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">isinstance</span>(x, <span class="bu">list</span>)).<span class="bu">any</span>():</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>        edges_ox[col] <span class="op">=</span> edges_ox[col].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x[<span class="dv">0</span>] <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">list</span>) <span class="cf">else</span> x)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Edges with u/v topology: </span><span class="sc">{</span><span class="bu">len</span>(edges_ox)<span class="sc">:,}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>OSMnx graph — nodes: 29,523, edges: 68,927
+Connected: True
+Edges with u/v topology: 68,927</code></pre>
+</div>
+</div>
+</section>
+<section id="transfer-lts-values-via-nearest-neighbour-matching" class="level3">
+<h3 class="anchored" data-anchor-id="transfer-lts-values-via-nearest-neighbour-matching">Transfer LTS Values via Nearest-Neighbour Matching</h3>
+<p>I transfer the pyrosm-derived LTS values onto the OSMnx edges using a dense sampling nearest-neighbour approach. Each pyrosm edge is sampled every 10 m to build a KD-tree of reference points; each OSMnx edge is similarly sampled and matched via majority vote within a 15 m threshold. This achieves nearly 100% match rate with the <code>network_type='bike'</code> extraction, preserving the accuracy of the original pyrosm LTS classification while gaining OSMnx’s topological connectivity.</p>
+<div id="cell-15" class="cell" data-execution_count="71">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.spatial <span class="im">import</span> cKDTree</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Strategy: sample multiple points along each edge, majority vote ─────────</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare pyrosm LTS edges</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>lts_src <span class="op">=</span> edges_lts[edges_lts[<span class="st">'lts'</span>].notna()][[<span class="st">'geometry'</span>, <span class="st">'lts'</span>]].copy()</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>lts_src <span class="op">=</span> lts_src.to_crs(CRS_IG)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Build KD-tree from densely sampled points on pyrosm edges</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample a point every ~10m along each pyrosm edge</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>sample_coords <span class="op">=</span> []</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>sample_lts <span class="op">=</span> []</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _, row <span class="kw">in</span> lts_src.iterrows():</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    geom <span class="op">=</span> row.geometry</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    length <span class="op">=</span> geom.length</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    n_samples <span class="op">=</span> <span class="bu">max</span>(<span class="bu">int</span>(length <span class="op">/</span> <span class="dv">10</span>), <span class="dv">1</span>)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n_samples):</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>        frac <span class="op">=</span> (i <span class="op">+</span> <span class="fl">0.5</span>) <span class="op">/</span> n_samples</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>        pt <span class="op">=</span> geom.interpolate(frac, normalized<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>        sample_coords.append((pt.x, pt.y))</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>        sample_lts.append(row[<span class="st">'lts'</span>])</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>sample_coords <span class="op">=</span> np.array(sample_coords)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>sample_lts <span class="op">=</span> np.array(sample_lts)</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>tree <span class="op">=</span> cKDTree(sample_coords)</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Built KD-tree with </span><span class="sc">{</span><span class="bu">len</span>(sample_coords)<span class="sc">:,}</span><span class="ss"> sample points from pyrosm edges'</span>)</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="co"># For each OSMnx edge, sample multiple points and do majority vote</span></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>matched_lts <span class="op">=</span> []</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _, row <span class="kw">in</span> edges_ox.iterrows():</span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>    geom <span class="op">=</span> row.geometry</span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>    length <span class="op">=</span> geom.length</span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>    n_query <span class="op">=</span> <span class="bu">max</span>(<span class="bu">int</span>(length <span class="op">/</span> <span class="dv">10</span>), <span class="dv">3</span>)  <span class="co"># at least 3 sample points</span></span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>    votes <span class="op">=</span> []</span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n_query):</span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>        frac <span class="op">=</span> (i <span class="op">+</span> <span class="fl">0.5</span>) <span class="op">/</span> n_query</span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>        pt <span class="op">=</span> geom.interpolate(frac, normalized<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>        dist, idx <span class="op">=</span> tree.query([pt.x, pt.y])</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> dist <span class="op">&lt;</span> <span class="dv">15</span>:  <span class="co"># 15m threshold</span></span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>            votes.append(sample_lts[idx])</span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> votes:</span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Majority vote — most common LTS value</span></span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>        <span class="im">from</span> collections <span class="im">import</span> Counter</span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>        matched_lts.append(Counter(votes).most_common(<span class="dv">1</span>)[<span class="dv">0</span>][<span class="dv">0</span>])</span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>        matched_lts.append(np.nan)</span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>edges_ox[<span class="st">'lts'</span>] <span class="op">=</span> matched_lts</span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a>matched <span class="op">=</span> edges_ox[<span class="st">'lts'</span>].notna().<span class="bu">sum</span>()</span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">Matched: </span><span class="sc">{</span>matched<span class="sc">:,}</span><span class="ss"> / </span><span class="sc">{</span><span class="bu">len</span>(edges_ox)<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span>matched<span class="op">/</span><span class="bu">len</span>(edges_ox)<span class="op">*</span><span class="dv">100</span><span class="sc">:.1f}</span><span class="ss">%)'</span>)</span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">LTS distribution:'</span>)</span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(edges_ox[<span class="st">'lts'</span>].value_counts().sort_index())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Built KD-tree with 215,188 sample points from pyrosm edges
+
+Matched: 68,903 / 68,927 (100.0%)
+
+LTS distribution:
+lts
+1.0    32960
+2.0    22303
+3.0     6436
+4.0     7204
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="highway-type-fallback-for-unmatched-edges" class="level3">
+<h3 class="anchored" data-anchor-id="highway-type-fallback-for-unmatched-edges">Highway-Type Fallback for Unmatched Edges</h3>
+<p>The 24 unmatched edges are mostly minor roads (service, residential, footway) that were absent from the pyrosm cycling extract. I assign them a conservative LTS based on their highway classification.</p>
+<div id="cell-17" class="cell" data-execution_count="76">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Fallback for unmatched edges ────────────────────────────────────────────</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>FALLBACK_LTS <span class="op">=</span> {</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'cycleway'</span>: <span class="dv">1</span>, <span class="st">'path'</span>: <span class="dv">1</span>, <span class="st">'track'</span>: <span class="dv">1</span>, <span class="st">'living_street'</span>: <span class="dv">1</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'footway'</span>: <span class="dv">1</span>, <span class="st">'pedestrian'</span>: <span class="dv">1</span>, <span class="st">'bridleway'</span>: <span class="dv">1</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'residential'</span>: <span class="dv">1</span>, <span class="st">'service'</span>: <span class="dv">2</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'unclassified'</span>: <span class="dv">2</span>, <span class="st">'tertiary'</span>: <span class="dv">2</span>, <span class="st">'tertiary_link'</span>: <span class="dv">2</span>,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'secondary'</span>: <span class="dv">3</span>, <span class="st">'secondary_link'</span>: <span class="dv">3</span>, <span class="st">'steps'</span>: <span class="dv">3</span>,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'primary'</span>: <span class="dv">4</span>, <span class="st">'primary_link'</span>: <span class="dv">4</span>, <span class="st">'trunk'</span>: <span class="dv">4</span>, <span class="st">'trunk_link'</span>: <span class="dv">4</span>,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> edges_ox[<span class="st">'lts'</span>].isna()</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>edges_ox.loc[mask, <span class="st">'lts'</span>] <span class="op">=</span> edges_ox.loc[mask, <span class="st">'highway'</span>].<span class="bu">map</span>(FALLBACK_LTS).fillna(<span class="dv">3</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Still unmatched: </span><span class="sc">{</span>edges_ox[<span class="st">"lts"</span>]<span class="sc">.</span>isna()<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">Final LTS distribution:'</span>)</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(edges_ox[<span class="st">'lts'</span>].value_counts().sort_index())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Still unmatched: 0
+
+Final LTS distribution:
+lts
+1.0    32960
+2.0    22327
+3.0     6436
+4.0     7204
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<div id="cell-18" class="cell" data-execution_count="74">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">14</span>))</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>plot_gdf <span class="op">=</span> edges_ox</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a helper function to format LTS labels for the legend</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lts_label(val):</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> pd.isna(val):</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'Missing (Service)'</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f'LTS </span><span class="sc">{</span><span class="bu">int</span>(val)<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>plot_gdf[<span class="st">'lts_status'</span>] <span class="op">=</span> plot_gdf[<span class="st">'lts'</span>].<span class="bu">apply</span>(lts_label)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the study area boundary. </span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="co"># The CRS parameter here should match the original coordinate system of belfast_boundary.</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co"># If the boundary and edges_ox already share the same CRS, this step can be simplified.</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>gpd.GeoDataFrame(geometry<span class="op">=</span>[belfast_boundary], crs<span class="op">=</span>plot_gdf.crs).plot(</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>ax, facecolor<span class="op">=</span><span class="st">'none'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>,</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    linewidth<span class="op">=</span><span class="dv">2</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="dv">1</span>, zorder<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the base road network as a background layer</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>plot_gdf.plot(ax<span class="op">=</span>ax, color<span class="op">=</span><span class="st">'#eeeeee'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>, zorder<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the color mapping for different LTS levels</span></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>color_map <span class="op">=</span> {</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">'LTS 1'</span>: <span class="st">'#2ecc71'</span>,</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">'LTS 2'</span>: <span class="st">'#f1c40f'</span>,</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">'LTS 3'</span>: <span class="st">'#e67e22'</span>,</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">'LTS 4'</span>: <span class="st">'#c0392b'</span>,</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Missing (Service)'</span>: <span class="st">'#9b59b6'</span>,</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate through the color map to plot each LTS level as a separate layer</span></span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> status, color <span class="kw">in</span> color_map.items():</span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>    subset <span class="op">=</span> plot_gdf[plot_gdf[<span class="st">'lts_status'</span>] <span class="op">==</span> status]</span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> subset.empty:</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>        subset.plot(ax<span class="op">=</span>ax, color<span class="op">=</span>color, linewidth<span class="op">=</span><span class="fl">0.8</span>, label<span class="op">=</span>status,</span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>                    zorder<span class="op">=</span><span class="dv">3</span> <span class="cf">if</span> <span class="st">'Missing'</span> <span class="kw">in</span> status <span class="cf">else</span> <span class="dv">2</span>)</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Configure plot titles, legends, and layout</span></span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Augmented Conveyal LTS — Belfast"</span>, fontsize<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>ax.legend(title<span class="op">=</span><span class="st">"LTS Level"</span>, loc<span class="op">=</span><span class="st">'upper right'</span>, framealpha<span class="op">=</span><span class="fl">0.9</span>)</span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">'off'</span>)</span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the visualization to the specified output directory</span></span>
+<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>plt.savefig(OUTPUT_DIR <span class="op">/</span> <span class="st">'Belfast_LTS.png'</span>, dpi<span class="op">=</span><span class="dv">500</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="belfast_lts_connectivity_measuring_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="build-igraph-using-uv-node-ids" class="level3">
+<h3 class="anchored" data-anchor-id="build-igraph-using-uv-node-ids">Build igraph Using <code>u</code>/<code>v</code> Node IDs</h3>
+<p>I construct the igraph directly from the OSMnx <code>u</code> and <code>v</code> columns. This guarantees topological correctness — no coordinate-rounding ambiguity, and the graph is a single connected component.</p>
+<div id="cell-20" class="cell" data-execution_count="77">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Build igraph from u/v node IDs ──────────────────────────────────────────</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>node_ids <span class="op">=</span> <span class="bu">list</span>(<span class="bu">set</span>(edges_ox[<span class="st">'u'</span>].tolist() <span class="op">+</span> edges_ox[<span class="st">'v'</span>].tolist()))</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>node_id_to_vid <span class="op">=</span> {nid: i <span class="cf">for</span> i, nid <span class="kw">in</span> <span class="bu">enumerate</span>(node_ids)}</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>edge_list <span class="op">=</span> [</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    (node_id_to_vid[row.u], node_id_to_vid[row.v])</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> edges_ox.itertuples()</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>G_full <span class="op">=</span> ig.Graph(n<span class="op">=</span><span class="bu">len</span>(node_ids), edges<span class="op">=</span>edge_list, directed<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>G_full.es[<span class="st">'length'</span>] <span class="op">=</span> edges_ox[<span class="st">'length_m'</span>].tolist()</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>G_full.es[<span class="st">'lts'</span>] <span class="op">=</span> edges_ox[<span class="st">'lts'</span>].astype(<span class="bu">int</span>).tolist()</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Store coordinates for centroid snapping (Irish Grid)</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>nodes_ig <span class="op">=</span> nodes_ox.to_crs(CRS_IG)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>coord_to_vid <span class="op">=</span> {</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    (nodes_ig.loc[nid, <span class="st">'geometry'</span>].x, nodes_ig.loc[nid, <span class="st">'geometry'</span>].y): node_id_to_vid[nid]</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> nid <span class="kw">in</span> node_ids</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>comps <span class="op">=</span> G_full.connected_components()</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Connected components: </span><span class="sc">{</span><span class="bu">len</span>(comps)<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Vertices: </span><span class="sc">{</span>G_full<span class="sc">.</span>vcount()<span class="sc">:,}</span><span class="ss">, Edges: </span><span class="sc">{</span>G_full<span class="sc">.</span>ecount()<span class="sc">:,}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Connected components: 1
+Vertices: 29,523, Edges: 68,927</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="snap-sdz-centroids-to-network" class="level2">
+<h2 class="anchored" data-anchor-id="snap-sdz-centroids-to-network">Snap SDZ Centroids to Network</h2>
+<p>Each SDZ centroid is snapped to the nearest graph vertex using a KD-tree. This provides the network entry/exit point for routing.</p>
+<div id="cell-22" class="cell" data-execution_count="78">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> snap_points_to_graph(points_gdf, coord_to_vid, code_col):</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Snap zone centroids to nearest graph vertex.</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns dict: zone_code → vertex_id</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> scipy.spatial <span class="im">import</span> cKDTree</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    coords <span class="op">=</span> np.array(<span class="bu">list</span>(coord_to_vid.keys()))</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    vids <span class="op">=</span> np.array(<span class="bu">list</span>(coord_to_vid.values()))</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>    tree <span class="op">=</span> cKDTree(coords)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    zone_to_vid <span class="op">=</span> {}</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    snap_distances <span class="op">=</span> []</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _, row <span class="kw">in</span> points_gdf.iterrows():</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>        centroid <span class="op">=</span> row.geometry.centroid</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>        pt <span class="op">=</span> np.array([centroid.x, centroid.y])</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>        dist, idx <span class="op">=</span> tree.query(pt)</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>        zone_to_vid[row[code_col]] <span class="op">=</span> <span class="bu">int</span>(vids[idx])</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>        snap_distances.append(dist)</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>    snap_distances <span class="op">=</span> np.array(snap_distances)</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Snapped </span><span class="sc">{</span><span class="bu">len</span>(zone_to_vid)<span class="sc">}</span><span class="ss"> zones to network'</span>)</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Snap distance — median: </span><span class="sc">{</span>np<span class="sc">.</span>median(snap_distances)<span class="sc">:.0f}</span><span class="ss"> m, '</span></span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f'max: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(snap_distances)<span class="sc">:.0f}</span><span class="ss"> m, '</span></span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f'mean: </span><span class="sc">{</span>np<span class="sc">.</span>mean(snap_distances)<span class="sc">:.0f}</span><span class="ss"> m'</span>)</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> zone_to_vid</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="cell-23" class="cell" data-execution_count="79">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sdz_to_vid <span class="op">=</span> snap_points_to_graph(belfast_sdz, coord_to_vid, sdz_code_col)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Check how many OD SDZs are successfully snapped</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>all_od_sdz <span class="op">=</span> <span class="bu">set</span>(od[<span class="st">'origin_sdz'</span>]) <span class="op">|</span> <span class="bu">set</span>(od[<span class="st">'dest_sdz'</span>])</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>snapped <span class="op">=</span> all_od_sdz <span class="op">&amp;</span> <span class="bu">set</span>(sdz_to_vid.keys())</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">OD SDZs in network: </span><span class="sc">{</span><span class="bu">len</span>(snapped)<span class="sc">}</span><span class="ss"> / </span><span class="sc">{</span><span class="bu">len</span>(all_od_sdz)<span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Snapped 175 zones to network
+Snap distance — median: 30 m, max: 591 m, mean: 47 m
+
+OD SDZs in network: 175 / 175</code></pre>
+</div>
+</div>
+</section>
+<section id="connectivity-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="connectivity-analysis">Connectivity Analysis</h2>
+<section id="core-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="core-algorithm">Core Algorithm</h3>
+<p>For each LTS threshold (1, 2, 3, 4):</p>
+<ol type="1">
+<li>I extract a <strong>sub-graph</strong> containing only edges with LTS ≤ threshold.</li>
+<li>For each OD pair, I compute the shortest path on the <strong>sub-graph</strong>.</li>
+<li>I compare this against the shortest path on the <strong>full graph</strong> (all edges).</li>
+<li>An OD pair is <strong>connected</strong> if:
+<ul>
+<li>A path exists on the sub-graph, AND</li>
+<li>The detour ratio ≤ 1.25 (or absolute detour ≤ 530 m for short trips).</li>
+</ul></li>
+</ol>
+<p>Following Mekuria et al.&nbsp;(2012), I restrict the analysis to OD pairs whose network distance falls between 0.5 and 6 miles, excluding trips that are too short (walking-dominant) or too long (unlikely cycling candidates).</p>
+<div id="cell-25" class="cell" data-execution_count="80">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Distance thresholds (Mekuria et al. 2012) ─────────────────────────────</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>DETOUR_RATIO <span class="op">=</span> <span class="fl">1.25</span>       <span class="co"># max 25% longer than shortest path</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>DETOUR_ABS_M <span class="op">=</span> <span class="fl">530.0</span>      <span class="co"># 0.33 miles in metres — for short trips</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>MIN_TRIP_M   <span class="op">=</span> <span class="fl">805.0</span>      <span class="co"># 0.5 miles — exclude very short trips</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>MAX_TRIP_M   <span class="op">=</span> <span class="fl">9_656.0</span>    <span class="co"># 6 miles — exclude very long trips</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_connectivity(</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    G_full: ig.Graph,</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    od_pairs: pd.DataFrame,</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    sdz_to_vid: <span class="bu">dict</span>,</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    lts_thresholds: <span class="bu">list</span>[<span class="bu">int</span>] <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> pd.DataFrame:</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="co">    Compute Percent Trips Connected for each LTS threshold.</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Computing shortest paths on full network...'</span>)</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>    valid_pairs <span class="op">=</span> od_pairs[</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>        od_pairs[<span class="st">'origin_sdz'</span>].isin(sdz_to_vid) <span class="op">&amp;</span></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>        od_pairs[<span class="st">'dest_sdz'</span>].isin(sdz_to_vid)</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>    ].copy()</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>    valid_pairs[<span class="st">'origin_vid'</span>] <span class="op">=</span> valid_pairs[<span class="st">'origin_sdz'</span>].<span class="bu">map</span>(sdz_to_vid)</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>    valid_pairs[<span class="st">'dest_vid'</span>] <span class="op">=</span> valid_pairs[<span class="st">'dest_sdz'</span>].<span class="bu">map</span>(sdz_to_vid)</span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>    valid_pairs <span class="op">=</span> valid_pairs[valid_pairs[<span class="st">'origin_vid'</span>] <span class="op">!=</span> valid_pairs[<span class="st">'dest_vid'</span>]].copy()</span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>    unique_origins <span class="op">=</span> valid_pairs[<span class="st">'origin_vid'</span>].unique().tolist()</span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Full-network shortest paths from each unique origin</span></span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>    full_sp <span class="op">=</span> {}</span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> o_vid <span class="kw">in</span> unique_origins:</span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a>        full_sp[o_vid] <span class="op">=</span> G_full.shortest_paths(source<span class="op">=</span>o_vid, weights<span class="op">=</span><span class="st">'length'</span>)[<span class="dv">0</span>]</span>
+<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a>    valid_pairs[<span class="st">'dist_full'</span>] <span class="op">=</span> [</span>
+<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a>        full_sp[row.origin_vid][row.dest_vid]</span>
+<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> row <span class="kw">in</span> valid_pairs.itertuples()</span>
+<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Filter by distance range (Mekuria: 0.5–6 miles)</span></span>
+<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a>    valid_pairs <span class="op">=</span> valid_pairs[</span>
+<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a>        (valid_pairs[<span class="st">'dist_full'</span>] <span class="op">&gt;=</span> MIN_TRIP_M) <span class="op">&amp;</span></span>
+<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a>        (valid_pairs[<span class="st">'dist_full'</span>] <span class="op">&lt;=</span> MAX_TRIP_M) <span class="op">&amp;</span></span>
+<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a>        (valid_pairs[<span class="st">'dist_full'</span>] <span class="op">&lt;</span> <span class="bu">float</span>(<span class="st">'inf'</span>))</span>
+<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a>    ].copy()</span>
+<span id="cb23-46"><a href="#cb23-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-47"><a href="#cb23-47" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Valid OD pairs (0.5–6 miles): </span><span class="sc">{</span><span class="bu">len</span>(valid_pairs)<span class="sc">:,}</span><span class="ss">'</span>)</span>
+<span id="cb23-48"><a href="#cb23-48" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Total demand in range: </span><span class="sc">{</span>valid_pairs[<span class="st">"count"</span>]<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">:,}</span><span class="ss">'</span>)</span>
+<span id="cb23-49"><a href="#cb23-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-50"><a href="#cb23-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For each LTS threshold, build sub-graph and check connectivity</span></span>
+<span id="cb23-51"><a href="#cb23-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> lts_max <span class="kw">in</span> lts_thresholds:</span>
+<span id="cb23-52"><a href="#cb23-52" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">--- LTS ≤ </span><span class="sc">{</span>lts_max<span class="sc">}</span><span class="ss"> ---'</span>)</span>
+<span id="cb23-53"><a href="#cb23-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-54"><a href="#cb23-54" aria-hidden="true" tabindex="-1"></a>        sub_edge_ids <span class="op">=</span> [e.index <span class="cf">for</span> e <span class="kw">in</span> G_full.es <span class="cf">if</span> e[<span class="st">'lts'</span>] <span class="op">&lt;=</span> lts_max]</span>
+<span id="cb23-55"><a href="#cb23-55" aria-hidden="true" tabindex="-1"></a>        G_sub <span class="op">=</span> G_full.subgraph_edges(sub_edge_ids, delete_vertices<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb23-56"><a href="#cb23-56" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'  Sub-graph edges: </span><span class="sc">{</span>G_sub<span class="sc">.</span>ecount()<span class="sc">:,}</span><span class="ss"> / </span><span class="sc">{</span>G_full<span class="sc">.</span>ecount()<span class="sc">:,}</span><span class="ss">'</span>)</span>
+<span id="cb23-57"><a href="#cb23-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-58"><a href="#cb23-58" aria-hidden="true" tabindex="-1"></a>        sub_sp <span class="op">=</span> {}</span>
+<span id="cb23-59"><a href="#cb23-59" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> o_vid <span class="kw">in</span> unique_origins:</span>
+<span id="cb23-60"><a href="#cb23-60" aria-hidden="true" tabindex="-1"></a>            sub_sp[o_vid] <span class="op">=</span> G_sub.shortest_paths(source<span class="op">=</span>o_vid, weights<span class="op">=</span><span class="st">'length'</span>)[<span class="dv">0</span>]</span>
+<span id="cb23-61"><a href="#cb23-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-62"><a href="#cb23-62" aria-hidden="true" tabindex="-1"></a>        col <span class="op">=</span> <span class="ss">f'connected_lts</span><span class="sc">{</span>lts_max<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb23-63"><a href="#cb23-63" aria-hidden="true" tabindex="-1"></a>        connected_flags <span class="op">=</span> []</span>
+<span id="cb23-64"><a href="#cb23-64" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> row <span class="kw">in</span> valid_pairs.itertuples():</span>
+<span id="cb23-65"><a href="#cb23-65" aria-hidden="true" tabindex="-1"></a>            d_sub <span class="op">=</span> sub_sp[row.origin_vid][row.dest_vid]</span>
+<span id="cb23-66"><a href="#cb23-66" aria-hidden="true" tabindex="-1"></a>            d_full <span class="op">=</span> row.dist_full</span>
+<span id="cb23-67"><a href="#cb23-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-68"><a href="#cb23-68" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> d_sub <span class="op">==</span> <span class="bu">float</span>(<span class="st">'inf'</span>):</span>
+<span id="cb23-69"><a href="#cb23-69" aria-hidden="true" tabindex="-1"></a>                connected_flags.append(<span class="va">False</span>)</span>
+<span id="cb23-70"><a href="#cb23-70" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb23-71"><a href="#cb23-71" aria-hidden="true" tabindex="-1"></a>                max_allowed <span class="op">=</span> <span class="bu">max</span>(d_full <span class="op">*</span> DETOUR_RATIO, d_full <span class="op">+</span> DETOUR_ABS_M)</span>
+<span id="cb23-72"><a href="#cb23-72" aria-hidden="true" tabindex="-1"></a>                connected_flags.append(d_sub <span class="op">&lt;=</span> max_allowed)</span>
+<span id="cb23-73"><a href="#cb23-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-74"><a href="#cb23-74" aria-hidden="true" tabindex="-1"></a>        valid_pairs[col] <span class="op">=</span> connected_flags</span>
+<span id="cb23-75"><a href="#cb23-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-76"><a href="#cb23-76" aria-hidden="true" tabindex="-1"></a>        n_conn <span class="op">=</span> <span class="bu">sum</span>(connected_flags)</span>
+<span id="cb23-77"><a href="#cb23-77" aria-hidden="true" tabindex="-1"></a>        t_conn <span class="op">=</span> valid_pairs.loc[valid_pairs[col], <span class="st">'count'</span>].<span class="bu">sum</span>()</span>
+<span id="cb23-78"><a href="#cb23-78" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'  Pairs connected: </span><span class="sc">{</span>n_conn<span class="sc">:,}</span><span class="ss"> / </span><span class="sc">{</span><span class="bu">len</span>(valid_pairs)<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span>n_conn<span class="op">/</span><span class="bu">len</span>(valid_pairs)<span class="op">*</span><span class="dv">100</span><span class="sc">:.1f}</span><span class="ss">%)'</span>)</span>
+<span id="cb23-79"><a href="#cb23-79" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'  Trips connected: </span><span class="sc">{</span>t_conn<span class="sc">:,}</span><span class="ss"> / </span><span class="sc">{</span>valid_pairs[<span class="st">"count"</span>]<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span>t_conn<span class="op">/</span>valid_pairs[<span class="st">"count"</span>]<span class="sc">.</span><span class="bu">sum</span>()<span class="op">*</span><span class="dv">100</span><span class="sc">:.1f}</span><span class="ss">%)'</span>)</span>
+<span id="cb23-80"><a href="#cb23-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-81"><a href="#cb23-81" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valid_pairs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="cell-26" class="cell" data-execution_count="81">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> compute_connectivity(G_full, od, sdz_to_vid)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Computing shortest paths on full network...
+Valid OD pairs (0.5–6 miles): 12,041
+Total demand in range: 63,933
+
+--- LTS ≤ 1 ---
+  Sub-graph edges: 32,960 / 68,927
+  Pairs connected: 33 / 12,041 (0.3%)
+  Trips connected: 166 / 63,933 (0.3%)
+
+--- LTS ≤ 2 ---
+  Sub-graph edges: 55,287 / 68,927
+  Pairs connected: 98 / 12,041 (0.8%)
+  Trips connected: 428 / 63,933 (0.7%)
+
+--- LTS ≤ 3 ---
+  Sub-graph edges: 61,723 / 68,927
+  Pairs connected: 1,000 / 12,041 (8.3%)
+  Trips connected: 5,074 / 63,933 (7.9%)
+
+--- LTS ≤ 4 ---
+  Sub-graph edges: 68,927 / 68,927
+  Pairs connected: 12,041 / 12,041 (100.0%)
+  Trips connected: 63,933 / 63,933 (100.0%)</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="summary-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="summary-metrics">Summary Metrics</h2>
+<p>I tabulate the two Mekuria indicators across all four LTS thresholds:</p>
+<ul>
+<li><strong>Percent Trips Connected</strong>: weighted by commuting flow (demand)</li>
+<li><strong>Percent Nodes Connected</strong>: unweighted (share of OD pairs)</li>
+</ul>
+<div id="cell-28" class="cell" data-execution_count="82">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Build summary table ──────────────────────────────────────────────────────</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>total_trips <span class="op">=</span> results[<span class="st">'count'</span>].<span class="bu">sum</span>()</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>total_pairs <span class="op">=</span> <span class="bu">len</span>(results)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>summary_rows <span class="op">=</span> []</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lts_max <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]:</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    col <span class="op">=</span> <span class="ss">f'connected_lts</span><span class="sc">{</span>lts_max<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    trips_conn <span class="op">=</span> results.loc[results[col], <span class="st">'count'</span>].<span class="bu">sum</span>()</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    pairs_conn <span class="op">=</span> results[col].<span class="bu">sum</span>()</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    summary_rows.append({</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'LTS Threshold'</span>: <span class="ss">f'LTS ≤ </span><span class="sc">{</span>lts_max<span class="sc">}</span><span class="ss">'</span>,</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Pairs Connected'</span>: <span class="bu">int</span>(pairs_conn),</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Total Pairs'</span>: total_pairs,</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">'% Nodes Connected'</span>: <span class="bu">round</span>(pairs_conn <span class="op">/</span> total_pairs <span class="op">*</span> <span class="dv">100</span>, <span class="dv">1</span>),</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Trips Connected'</span>: <span class="bu">int</span>(trips_conn),</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Total Trips'</span>: <span class="bu">int</span>(total_trips),</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">'% Trips Connected'</span>: <span class="bu">round</span>(trips_conn <span class="op">/</span> total_trips <span class="op">*</span> <span class="dv">100</span>, <span class="dv">1</span>),</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> pd.DataFrame(summary_rows)</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(summary.to_string(index<span class="op">=</span><span class="va">False</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>LTS Threshold  Pairs Connected  Total Pairs  % Nodes Connected  Trips Connected  Total Trips  % Trips Connected
+      LTS ≤ 1               33        12041                0.3              166        63933                0.3
+      LTS ≤ 2               98        12041                0.8              428        63933                0.7
+      LTS ≤ 3             1000        12041                8.3             5074        63933                7.9
+      LTS ≤ 4            12041        12041              100.0            63933        63933              100.0</code></pre>
+</div>
+</div>
+</section>
+<section id="visualisation" class="level2">
+<h2 class="anchored" data-anchor-id="visualisation">Visualisation</h2>
+<section id="percent-trips-connected-percent-nodes-connected" class="level3">
+<h3 class="anchored" data-anchor-id="percent-trips-connected-percent-nodes-connected">Percent Trips Connected &amp; Percent Nodes Connected</h3>
+<div id="cell-30" class="cell" data-execution_count="83">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>))</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>lts_labels <span class="op">=</span> [<span class="st">'LTS ≤ 1'</span>, <span class="st">'LTS ≤ 2'</span>, <span class="st">'LTS ≤ 3'</span>, <span class="st">'LTS ≤ 4'</span>]</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>lts_colors <span class="op">=</span> [<span class="st">'#2ecc71'</span>, <span class="st">'#f1c40f'</span>, <span class="st">'#e67e22'</span>, <span class="st">'#c0392b'</span>]</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Percent Trips Connected ──────────────────────────────────────────────────</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> axes[<span class="dv">0</span>]</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>pct_trips <span class="op">=</span> summary[<span class="st">'% Trips Connected'</span>].values</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>bars <span class="op">=</span> ax.bar(lts_labels, pct_trips, color<span class="op">=</span>lts_colors, edgecolor<span class="op">=</span><span class="st">'white'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'% Trips Connected'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Percent Trips Connected'</span>, fontsize<span class="op">=</span><span class="dv">15</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">105</span>)</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bar, val <span class="kw">in</span> <span class="bu">zip</span>(bars, pct_trips):</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>    ax.text(bar.get_x() <span class="op">+</span> bar.get_width() <span class="op">/</span> <span class="dv">2</span>, bar.get_height() <span class="op">+</span> <span class="fl">1.5</span>,</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f'</span><span class="sc">{</span>val<span class="sc">:.1f}</span><span class="ss">%'</span>, ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'bottom'</span>, fontsize<span class="op">=</span><span class="dv">12</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>ax.spines[[<span class="st">'top'</span>, <span class="st">'right'</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Percent Nodes Connected ──────────────────────────────────────────────────</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> axes[<span class="dv">1</span>]</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>pct_nodes <span class="op">=</span> summary[<span class="st">'% Nodes Connected'</span>].values</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>bars <span class="op">=</span> ax.bar(lts_labels, pct_nodes, color<span class="op">=</span>lts_colors, edgecolor<span class="op">=</span><span class="st">'white'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'% Nodes Connected'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Percent Nodes Connected'</span>, fontsize<span class="op">=</span><span class="dv">15</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">105</span>)</span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bar, val <span class="kw">in</span> <span class="bu">zip</span>(bars, pct_nodes):</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>    ax.text(bar.get_x() <span class="op">+</span> bar.get_width() <span class="op">/</span> <span class="dv">2</span>, bar.get_height() <span class="op">+</span> <span class="fl">1.5</span>,</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f'</span><span class="sc">{</span>val<span class="sc">:.1f}</span><span class="ss">%'</span>, ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'bottom'</span>, fontsize<span class="op">=</span><span class="dv">12</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>ax.spines[[<span class="st">'top'</span>, <span class="st">'right'</span>]].set_visible(<span class="va">False</span>)</span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'Belfast Cycling Network Connectivity (Mekuria et al. 2012)'</span>,</span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>             fontsize<span class="op">=</span><span class="dv">16</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>plt.savefig(OUTPUT_DIR <span class="op">/</span> <span class="st">'belfast_connectivity_metrics.png'</span>, dpi<span class="op">=</span><span class="dv">200</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Saved to </span><span class="sc">{</span>OUTPUT_DIR <span class="op">/</span> <span class="st">"belfast_connectivity_metrics.png"</span><span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="belfast_lts_connectivity_measuring_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Saved to ..\Figure\belfast_connectivity_metrics.png</code></pre>
+</div>
+</div>
+</section>
+<section id="per-sdz-connectivity-score" class="level3">
+<h3 class="anchored" data-anchor-id="per-sdz-connectivity-score">Per-SDZ Connectivity Score</h3>
+<p>For the dashboard, I compute a per-SDZ metric: what share of outbound commuting demand from each SDZ is connected at each LTS threshold. This allows choropleth mapping at SDZ level.</p>
+<div id="cell-32" class="cell" data-execution_count="84">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Per-SDZ outbound connectivity score ──────────────────────────────────────</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>sdz_scores <span class="op">=</span> []</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> sdz_code <span class="kw">in</span> belfast_sdz[sdz_code_col].values:</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    mask <span class="op">=</span> results[<span class="st">'origin_sdz'</span>] <span class="op">==</span> sdz_code</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    subset <span class="op">=</span> results[mask]</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(subset) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>        row <span class="op">=</span> {<span class="st">'sdz_code'</span>: sdz_code, <span class="st">'total_trips'</span>: <span class="dv">0</span>}</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> lts_max <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]:</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>            row[<span class="ss">f'pct_trips_lts</span><span class="sc">{</span>lts_max<span class="sc">}</span><span class="ss">'</span>] <span class="op">=</span> np.nan</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>        sdz_scores.append(row)</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> subset[<span class="st">'count'</span>].<span class="bu">sum</span>()</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>    row <span class="op">=</span> {<span class="st">'sdz_code'</span>: sdz_code, <span class="st">'total_trips'</span>: <span class="bu">int</span>(total)}</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> lts_max <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]:</span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>        col <span class="op">=</span> <span class="ss">f'connected_lts</span><span class="sc">{</span>lts_max<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>        conn <span class="op">=</span> subset.loc[subset[col], <span class="st">'count'</span>].<span class="bu">sum</span>()</span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>        row[<span class="ss">f'pct_trips_lts</span><span class="sc">{</span>lts_max<span class="sc">}</span><span class="ss">'</span>] <span class="op">=</span> <span class="bu">round</span>(conn <span class="op">/</span> total <span class="op">*</span> <span class="dv">100</span>, <span class="dv">1</span>) <span class="cf">if</span> total <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="fl">0.0</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>    sdz_scores.append(row)</span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>sdz_scores_df <span class="op">=</span> pd.DataFrame(sdz_scores)</span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sdz_scores_df.describe().<span class="bu">round</span>(<span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>       total_trips  pct_trips_lts1  pct_trips_lts2  pct_trips_lts3  \
+count        175.0           175.0           175.0           175.0   
+mean         365.3             0.3             0.7             8.3   
+std           97.2             0.8             1.4             9.2   
+min          136.0             0.0             0.0             0.0   
+25%          292.0             0.0             0.0             0.0   
+50%          357.0             0.0             0.0             4.9   
+75%          419.5             0.0             0.6            14.2   
+max          692.0             4.4             8.4            44.9   
+
+       pct_trips_lts4  
+count           175.0  
+mean            100.0  
+std               0.0  
+min             100.0  
+25%             100.0  
+50%             100.0  
+75%             100.0  
+max             100.0  </code></pre>
+</div>
+</div>
+<div id="cell-33" class="cell" data-execution_count="85">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Choropleth: Per-SDZ % Trips Connected ────────────────────────────────────</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>plot_sdz <span class="op">=</span> belfast_sdz.merge(</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    sdz_scores_df, left_on<span class="op">=</span>sdz_code_col, right_on<span class="op">=</span><span class="st">'sdz_code'</span>, how<span class="op">=</span><span class="st">'left'</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">24</span>, <span class="dv">7</span>))</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, lts_max <span class="kw">in</span> <span class="bu">enumerate</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]):</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> axes[i]</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    col <span class="op">=</span> <span class="ss">f'pct_trips_lts</span><span class="sc">{</span>lts_max<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    plot_sdz.plot(</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>        column<span class="op">=</span>col, ax<span class="op">=</span>ax, legend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>        cmap<span class="op">=</span><span class="st">'RdYlGn'</span>, vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">100</span>,</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>        edgecolor<span class="op">=</span><span class="st">'white'</span>, linewidth<span class="op">=</span><span class="fl">0.3</span>,</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>        missing_kwds<span class="op">=</span>{<span class="st">'color'</span>: <span class="st">'#cccccc'</span>, <span class="st">'label'</span>: <span class="st">'No data'</span>},</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>        legend_kwds<span class="op">=</span>{<span class="st">'shrink'</span>: <span class="fl">0.6</span>, <span class="st">'label'</span>: <span class="st">'% Trips Connected'</span>}</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f'LTS ≤ </span><span class="sc">{</span>lts_max<span class="sc">}</span><span class="ss">'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>    ax.set_axis_off()</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'Per-SDZ Outbound % Trips Connected — Belfast'</span>,</span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>             fontsize<span class="op">=</span><span class="dv">16</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>plt.savefig(OUTPUT_DIR <span class="op">/</span> <span class="st">'belfast_sdz_connectivity_choropleth.png'</span>,</span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>            dpi<span class="op">=</span><span class="dv">200</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="belfast_lts_connectivity_measuring_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="export-results-for-dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="export-results-for-dashboard">Export Results for Dashboard</h3>
+<p>I save the per-SDZ scores and OD-level results for the interactive dashboard.</p>
+<div id="cell-35" class="cell" data-execution_count="93">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Export ────────────────────────────────────────────────────────────────────</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>sdz_scores_df.to_csv(DATA_DIR <span class="op">/</span> <span class="st">'belfast_sdz_connectivity_scores.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>summary.to_csv(DATA_DIR <span class="op">/</span> <span class="st">'belfast_connectivity_summary.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>results.to_csv(DATA_DIR <span class="op">/</span> <span class="st">'belfast_od_connectivity_results.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Exported:'</span>)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'  </span><span class="sc">{</span>DATA_DIR <span class="op">/</span> <span class="st">"belfast_sdz_connectivity_scores.csv"</span><span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'  </span><span class="sc">{</span>DATA_DIR <span class="op">/</span> <span class="st">"belfast_connectivity_summary.csv"</span><span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'  </span><span class="sc">{</span>DATA_DIR <span class="op">/</span> <span class="st">"belfast_od_connectivity_results.csv"</span><span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Exported:
+  ..\Data\belfast_sdz_connectivity_scores.csv
+  ..\Data\belfast_connectivity_summary.csv
+  ..\Data\belfast_od_connectivity_results.csv</code></pre>
+</div>
+</div>
+<div id="cell-36" class="cell" data-execution_count="94">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Export all data for the interactive dashboard ────────────────────────────</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>DASH_DIR <span class="op">=</span> Path(<span class="st">'../belfast-cycling-dashboard'</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>DASH_DIR.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. LTS network — use pyrosm original (accurate LTS, for map display only)</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>lts_web <span class="op">=</span> edges_lts[edges_lts[<span class="st">'lts'</span>].notna()][[<span class="st">'geometry'</span>, <span class="st">'lts'</span>]].copy()</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>lts_web <span class="op">=</span> lts_web.to_crs(<span class="st">'EPSG:4326'</span>)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>lts_web[<span class="st">'lts'</span>] <span class="op">=</span> lts_web[<span class="st">'lts'</span>].astype(<span class="bu">int</span>)</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>lts_web[<span class="st">'geometry'</span>] <span class="op">=</span> lts_web.geometry.simplify(<span class="fl">0.0001</span>)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>lts_web.to_file(DASH_DIR <span class="op">/</span> <span class="st">'lts_network.json'</span>, driver<span class="op">=</span><span class="st">'GeoJSON'</span>)</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'1. LTS network: </span><span class="sc">{</span><span class="bu">len</span>(lts_web)<span class="sc">:,}</span><span class="ss"> edges → lts_network.json'</span>)</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. SDZ boundaries with LTS distribution (for map + bar chart)</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>lts_dist <span class="op">=</span> pd.read_csv(OUTPUT_DIR <span class="op">/</span> <span class="st">'belfast_sdz_lts_distribution.csv'</span>)</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>sdz_web <span class="op">=</span> belfast_sdz.merge(lts_dist, on<span class="op">=</span>sdz_code_col, how<span class="op">=</span><span class="st">'left'</span>).fillna(<span class="dv">0</span>)</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>sdz_web <span class="op">=</span> sdz_web.to_crs(<span class="st">'EPSG:4326'</span>)</span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>sdz_web[<span class="st">'geometry'</span>] <span class="op">=</span> sdz_web.geometry.simplify(<span class="fl">0.0003</span>)</span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>keep <span class="op">=</span> [sdz_code_col, <span class="st">'sdz2021_nm'</span>, <span class="st">'dea2014_nm'</span>, <span class="st">'lts_1_count'</span>, <span class="st">'lts_2_count'</span>, <span class="st">'lts_3_count'</span>, <span class="st">'lts_4_count'</span>, <span class="st">'geometry'</span>]</span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>sdz_web[keep].to_file(DASH_DIR <span class="op">/</span> <span class="st">'sdz_data.json'</span>, driver<span class="op">=</span><span class="st">'GeoJSON'</span>)</span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'2. SDZ zones: </span><span class="sc">{</span><span class="bu">len</span>(sdz_web)<span class="sc">}</span><span class="ss"> → sdz_data.json'</span>)</span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. OD distances (for detour slider)</span></span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>od_dist <span class="op">=</span> pd.read_csv(OUTPUT_DIR <span class="op">/</span> <span class="st">'belfast_od_distances.csv'</span>)</span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c <span class="kw">in</span> [<span class="st">'dist_lts1'</span>, <span class="st">'dist_lts2'</span>, <span class="st">'dist_lts3'</span>, <span class="st">'dist_lts4'</span>]:</span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>    od_dist[c] <span class="op">=</span> od_dist[c].replace(<span class="bu">float</span>(<span class="st">'inf'</span>), <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(DASH_DIR <span class="op">/</span> <span class="st">'od_data.json'</span>, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>    json.dump(od_dist.to_dict(orient<span class="op">=</span><span class="st">'records'</span>), f, separators<span class="op">=</span>(<span class="st">','</span>, <span class="st">':'</span>))</span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'3. OD distances: </span><span class="sc">{</span><span class="bu">len</span>(od_dist)<span class="sc">:,}</span><span class="ss"> pairs → od_data.json'</span>)</span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Summary table</span></span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>summary.to_csv(DASH_DIR <span class="op">/</span> <span class="st">'belfast_connectivity_summary.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'4. Summary → belfast_connectivity_summary.csv'</span>)</span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">── All exported to </span><span class="sc">{</span>DASH_DIR<span class="sc">}</span><span class="ss"> ──'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>1. LTS network: 23,464 edges → lts_network.json
+2. SDZ zones: 175 → sdz_data.json
+3. OD distances: 12,041 pairs → od_data.json
+4. Summary → belfast_connectivity_summary.csv
+
+── All exported to ..\belfast-cycling-dashboard ──</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Mekuria, M. C., Furth, P. G. &amp; Nixon, H. (2012). <em>Low-Stress Bicycling and Network Connectivity</em>. Mineta Transportation Institute Report 11-19.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

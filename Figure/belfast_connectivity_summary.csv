@@ -1,5 +1,0 @@
-LTS Threshold,Pairs Connected,Total Pairs,% Nodes Connected,Trips Connected,Total Trips,% Trips Connected
-LTS ≤ 1,33,12041,0.3,166,63933,0.3
-LTS ≤ 2,98,12041,0.8,428,63933,0.7
-LTS ≤ 3,1000,12041,8.3,5074,63933,7.9
-LTS ≤ 4,12041,12041,100.0,63933,63933,100.0

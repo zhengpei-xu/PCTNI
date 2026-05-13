@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Zhengpei (Pippin) Xu">
-<meta name="dcterms.date" content="2026-05-11">
+<meta name="dcterms.date" content="2026-05-13">
 
 <title>Belfast Cycle Network Assessment – Belfast Active Travel Research</title>
 <style>
@@ -119,6 +119,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://zhengpei-xu.github.io//PCTNI/belfast-cycling-dashboard/belfast_lts_connectivity_dashboard.html"> 
+<span class="menu-text">Belfast LTS Connectivity Explorer</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -177,13 +181,22 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./Code/lts_background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LTS Background</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./Code/belfast_cycle_lts_assessment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">LTS Classification</span></a>
   </div>
 </li>
           <li class="sidebar-item">
- <span class="menu-text">notebooks/test.ipynb</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./Code/belfast_lts_connectivity_measuring.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connectivity Measuring</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -196,10 +209,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#research-overview" id="toc-research-overview" class="nav-link active" data-scroll-target="#research-overview">Research Overview</a>
+  <li><a href="#project-overview" id="toc-project-overview" class="nav-link active" data-scroll-target="#project-overview">Project Overview</a>
   <ul class="collapse">
-  <li><a href="#key-objectives" id="toc-key-objectives" class="nav-link" data-scroll-target="#key-objectives">Key Objectives</a></li>
-  <li><a href="#methodology-summary" id="toc-methodology-summary" class="nav-link" data-scroll-target="#methodology-summary">Methodology Summary</a></li>
+  <li><a href="#what-i-did" id="toc-what-i-did" class="nav-link" data-scroll-target="#what-i-did">What I Did</a></li>
+  <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings">Key Findings</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -210,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Overview</a></li><li class="breadcrumb-item"><a href="./index.html">Belfast Cycle Network Assessment</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Belfast Cycle Network Assessment</h1>
-<p class="subtitle lead">An ML Approach to LTN 1/20 &amp; Active Travel Deserts</p>
+<p class="subtitle lead">Level of Traffic Stress &amp; Low-Stress Connectivity Analysis</p>
 </div>
 
 
@@ -227,7 +241,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 11, 2026</p>
+      <p class="date">May 13, 2026</p>
     </div>
   </div>
   
@@ -239,15 +253,31 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="research-overview" class="level1">
-<h1>Research Overview</h1>
-<p>This project investigates the spatial quality of the Belfast cycling network. By applying <strong>Level of Traffic Stress (LTS)</strong> classifications and <strong>LTN 1/20</strong> standards, I aim to identify “Active Travel Deserts”—areas where infrastructure supply fails to meet high demand.</p>
-<section id="key-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="key-objectives">Key Objectives</h3>
+<section id="project-overview" class="level1">
+<h1>Project Overview</h1>
+<p>This project evaluates the cycling network connectivity of Belfast using the <strong>Level of Traffic Stress (LTS)</strong> framework (Mekuria et al.&nbsp;2012) and the <strong>Percent Trips Connected</strong> metric. I built this as my contribution to the <a href="https://pctni.github.io/hack/">PCTNI Data-Driven Transport Planning Hackathon</a> (18 May 2026, hosted by Prof.&nbsp;Robin Lovelace at Queen’s University Belfast).</p>
+<p>The central question is straightforward: <strong>if you only use low-stress roads, how much of Belfast’s commuting demand can you actually serve?</strong></p>
+<section id="what-i-did" class="level3">
+<h3 class="anchored" data-anchor-id="what-i-did">What I Did</h3>
+<p>I classified every cyclable road segment in Belfast into four stress levels (LTS 1–4) based on speed limits, lane counts, and cycling infrastructure, following the Conveyal/Mekuria framework augmented by Jeong &amp; Smith (2025). I then computed network connectivity — for each pair of Super Data Zones, I checked whether a low-stress route exists that doesn’t require an unreasonable detour compared to the shortest path.</p>
+</section>
+<section id="key-findings" class="level3">
+<h3 class="anchored" data-anchor-id="key-findings">Key Findings</h3>
+<p>The results reveal severe fragmentation in Belfast’s low-stress cycling network:</p>
 <ul>
-<li><strong>Infrastructure Audit</strong>: Cleaning and joining OSNI pothole data to road segments.</li>
-<li><strong>LTS Classification</strong>: Categorizing road stress levels based on traffic volume and speed.</li>
-<li><strong>Equity Analysis</strong>: Assessing accessibility for marginalized socio-economic groups.</li>
+<li>At <strong>LTS ≤ 1</strong> (suitable for children): only <strong>0.0%</strong> of commuting trips connected</li>
+<li>At <strong>LTS ≤ 2</strong> (tolerable for most adults): only <strong>0.7%</strong></li>
+<li>At <strong>LTS ≤ 3</strong> (experienced cyclists): <strong>7.9%</strong></li>
+<li>At <strong>LTS ≤ 4</strong> (all roads): <strong>100%</strong></li>
+</ul>
+<p>This means Belfast has plenty of quiet residential streets, but they don’t form a connected network — cyclists are forced onto high-stress arterials to complete their journeys.</p>
+</section>
+<section id="data-sources" class="level3">
+<h3 class="anchored" data-anchor-id="data-sources">Data Sources</h3>
+<ul>
+<li><strong>Road network</strong>: OpenStreetMap via pyrosm (LTS classification) and OSMnx (graph topology)</li>
+<li><strong>Commuting demand</strong>: Census 2021 OD flows (ODWP01) at Super Data Zone level, from the <a href="https://github.com/pctni/hack/releases/tag/v0.1.0">PCTNI hackathon datasets</a></li>
+<li><strong>Zone boundaries</strong>: NISRA Super Data Zones 2021</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -255,17 +285,13 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Research Progress
+<span class="screen-reader-only">Tip</span>Explore the Results
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The current analysis focuses on the Belfast urban core. Technical notebooks can be found in the sidebar under <strong>Technical Analysis</strong>.</p>
+<p>Use the <strong><a href="belfast-cycling-dashboard/belfast_lts_connectivity_dashboard.html">Belfast LTS Connectivity Explorer</a></strong> to interactively select any SDZ, adjust the detour tolerance, and see connectivity metrics update in real time. Technical notebooks are available in the sidebar.</p>
 </div>
 </div>
-</section>
-<section id="methodology-summary" class="level3">
-<h3 class="anchored" data-anchor-id="methodology-summary">Methodology Summary</h3>
-<p>As highlighted in the research by Eppenberger and Richter (2021), spatial equity is a critical lens for urban mobility. This project utilizes the <code>urbsim</code> Python environment for all spatial joins and network modeling.</p>
 
 
 </section>

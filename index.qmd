@@ -1,23 +1,50 @@
 ---
 title: "Belfast Cycle Network Assessment"
-subtitle: "An ML Approach to LTN 1/20 & Active Travel Deserts"
+subtitle: "Level of Traffic Stress & Low-Stress Connectivity Analysis"
 author: "Zhengpei (Pippin) Xu"
 date: last-modified
 ---
 
-# Research Overview
+# Project Overview
 
-This project investigates the spatial quality of the Belfast cycling network. By applying **Level of Traffic Stress (LTS)** classifications and **LTN 1/20** standards, I aim to identify "Active Travel Deserts"—areas where infrastructure supply fails to meet high demand.
+This project evaluates the cycling network connectivity of Belfast using the
+**Level of Traffic Stress (LTS)** framework (Mekuria et al. 2012) and the
+**Percent Trips Connected** metric. I built this as my contribution to the
+[PCTNI Data-Driven Transport Planning Hackathon](https://pctni.github.io/hack/)
+(18 May 2026, hosted by Prof. Robin Lovelace at Queen's University Belfast).
 
-### Key Objectives
-* **Infrastructure Audit**: Cleaning and joining OSNI pothole data to road segments.
-* **LTS Classification**: Categorizing road stress levels based on traffic volume and speed.
-* **Equity Analysis**: Assessing accessibility for marginalized socio-economic groups.
+The central question is straightforward: **if you only use low-stress roads,
+how much of Belfast's commuting demand can you actually serve?**
+
+### What I Did
+
+I classified every cyclable road segment in Belfast into four stress levels
+(LTS 1–4) based on speed limits, lane counts, and cycling infrastructure,
+following the Conveyal/Mekuria framework augmented by Jeong & Smith (2025).
+I then computed network connectivity — for each pair of Super Data Zones, I
+checked whether a low-stress route exists that doesn't require an unreasonable
+detour compared to the shortest path.
+
+### Key Findings
+
+The results reveal severe fragmentation in Belfast's low-stress cycling network:
+
+- At **LTS ≤ 1** (suitable for children): only **0.0%** of commuting trips connected
+- At **LTS ≤ 2** (tolerable for most adults): only **0.7%**
+- At **LTS ≤ 3** (experienced cyclists): **7.9%**
+- At **LTS ≤ 4** (all roads): **100%**
+
+This means Belfast has plenty of quiet residential streets, but they don't form
+a connected network — cyclists are forced onto high-stress arterials to complete
+their journeys.
+
+### Data Sources
+
+- **Road network**: OpenStreetMap via pyrosm (LTS classification) and OSMnx (graph topology)
+- **Commuting demand**: Census 2021 OD flows (ODWP01) at Super Data Zone level, from the [PCTNI hackathon datasets](https://github.com/pctni/hack/releases/tag/v0.1.0)
+- **Zone boundaries**: NISRA Super Data Zones 2021
 
 ::: {.callout-tip}
-## Research Progress
-The current analysis focuses on the Belfast urban core. Technical notebooks can be found in the sidebar under **Technical Analysis**.
+## Explore the Results
+Use the **[Belfast LTS Connectivity Explorer](belfast-cycling-dashboard/belfast_lts_connectivity_dashboard.html)** to interactively select any SDZ, adjust the detour tolerance, and see connectivity metrics update in real time. Technical notebooks are available in the sidebar.
 :::
-
-### Methodology Summary
-As highlighted in the research by Eppenberger and Richter (2021), spatial equity is a critical lens for urban mobility. This project utilizes the `urbsim` Python environment for all spatial joins and network modeling.

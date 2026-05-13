@@ -66,6 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../image/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -76,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cb7176258186911f3146c8d4816951ef.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4dd4629b1ba5f65f2f669e1781ab0653.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -140,6 +141,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://zhengpei-xu.github.io//PCTNI/belfast-cycling-dashboard/belfast_lts_connectivity_dashboard.html"> 
+<span class="menu-text">Belfast LTS Connectivity Explorer</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
@@ -161,9 +166,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Northern Ireland Cycle Network Assessment — LTS Classification</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
@@ -171,11 +173,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -205,11 +202,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
- <span class="menu-text">notebooks/NIPothole.ipynb</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../Code/lts_background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LTS Background</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
- <span class="menu-text">notebooks/test.ipynb</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../Code/belfast_cycle_lts_assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LTS Classification</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Code/belfast_lts_connectivity_measuring.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Connectivity Measuring</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -293,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="3" class="anchored" data-anchor-id="environment-setup"><span class="header-section-number">3</span> Environment setup</h2>
 <div id="code3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:980,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1778328725009,&quot;user&quot;:{&quot;displayName&quot;:&quot;Hsu Pippin&quot;,&quot;userId&quot;:&quot;15368761151660939211&quot;},&quot;user_tz&quot;:-60}}" data-outputid="ce516eaa-6fae-4b62-e706-c0da2654df08" data-execution_count="9">
 <details class="code-fold">
-<summary>View Python Code</summary>
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
@@ -335,7 +344,7 @@ Success: Loaded 850 spatial features.</code></pre>
 <p>Northern Ireland, using 2021 Super Data Zones (SDZ) as the spatial unit. All spatial operations use Irish Grid (EPSG:29903).</p>
 <div id="code5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:10904,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1778328740465,&quot;user&quot;:{&quot;displayName&quot;:&quot;Hsu Pippin&quot;,&quot;userId&quot;:&quot;15368761151660939211&quot;},&quot;user_tz&quot;:-60}}" data-outputid="ae1c4162-0f9d-48c9-e4a4-afe6d61ae745" data-execution_count="10">
 <details class="code-fold">
-<summary>View Python Code</summary>
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the Northern Ireland 2021 Super Data Zones (SDZ)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>raw_data <span class="op">=</span> gpd.read_file(DATA_DIR <span class="op">/</span> <span class="st">"zones_sdz.gpkg"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -391,7 +400,7 @@ Total SDZ zones: 850</code></pre>
 </blockquote>
 <div id="code7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:1054589,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1778329893378,&quot;user&quot;:{&quot;displayName&quot;:&quot;Hsu Pippin&quot;,&quot;userId&quot;:&quot;15368761151660939211&quot;},&quot;user_tz&quot;:-60}}" data-outputid="206d24d5-80ec-43d1-a982-5da299536222" data-execution_count="11">
 <details class="code-fold">
-<summary>View Python Code</summary>
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>NETWORK_FILE <span class="op">=</span> DATA_DIR <span class="op">/</span> <span class="st">"ni_cycling_network_full.parquet"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> NETWORK_FILE.exists():</span>
@@ -443,7 +452,7 @@ Columns: ['u', 'v', 'key', 'osmid', 'highway', 'maxspeed', 'name', 'surface', 'o
 </div>
 <div id="code8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:19690,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1778329994620,&quot;user&quot;:{&quot;displayName&quot;:&quot;Hsu Pippin&quot;,&quot;userId&quot;:&quot;15368761151660939211&quot;},&quot;user_tz&quot;:-60}}" data-outputid="6014a64c-c4c3-4032-cb4c-2bb776e6ae77" data-execution_count="12">
 <details class="code-fold">
-<summary>View Python Code</summary>
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix mixed-type columns (lists vs scalars) for Parquet compatibility</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> edges.select_dtypes(include<span class="op">=</span><span class="st">'object'</span>).columns:</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> col <span class="op">!=</span> <span class="st">'geometry'</span>:</span>
@@ -461,7 +470,7 @@ Columns: ['u', 'v', 'key', 'osmid', 'highway', 'maxspeed', 'name', 'surface', 'o
 </div>
 <div id="code9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:118,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1778330002482,&quot;user&quot;:{&quot;displayName&quot;:&quot;Hsu Pippin&quot;,&quot;userId&quot;:&quot;15368761151660939211&quot;},&quot;user_tz&quot;:-60}}" data-outputid="f842d2af-3e99-4633-8f50-74bc598c60da" data-execution_count="13">
 <details class="code-fold">
-<summary>View Python Code</summary>
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_columns'</span>, <span class="va">None</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>edges.head(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
@@ -740,7 +749,7 @@ Columns: ['u', 'v', 'key', 'osmid', 'highway', 'maxspeed', 'name', 'surface', 'o
 </table>
 <div id="code11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:26691,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1778330036636,&quot;user&quot;:{&quot;displayName&quot;:&quot;Hsu Pippin&quot;,&quot;userId&quot;:&quot;15368761151660939211&quot;},&quot;user_tz&quot;:-60}}" data-outputid="18277347-308b-4a7d-f841-ff7c60ba26f3" data-execution_count="14">
 <details class="code-fold">
-<summary>View Python Code</summary>
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> classify_cycle_infrastructure(row):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Classify a road segment into one of 6 cycle infrastructure categories</span></span>
@@ -815,7 +824,7 @@ Name: count, dtype: int64
 <p>Visual inspection of cycle infrastructure classification across Northern Ireland. Compare with local knowledge or DfI cycling maps to verify OSM tag quality.</p>
 <div id="code13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:93087,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1778330154202,&quot;user&quot;:{&quot;displayName&quot;:&quot;Hsu Pippin&quot;,&quot;userId&quot;:&quot;15368761151660939211&quot;},&quot;user_tz&quot;:-60}}" data-outputid="77391594-9c7d-4c16-86f0-57d08fabbd58" data-execution_count="15">
 <details class="code-fold">
-<summary>View Python Code</summary>
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>colour_map <span class="op">=</span> {</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'protected_a'</span>: <span class="st">'#1f77b4'</span>,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'protected_b'</span>: <span class="st">'#2ca02c'</span>,</span>
@@ -919,7 +928,7 @@ Name: count, dtype: int64
 <p>Traffic signal nodes are needed for the Jeong &amp; Smith signalised intersection adjustment (Step 7). These are extracted via OSMnx from the Overpass API.</p>
 <div id="code16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:65107,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1778330294384,&quot;user&quot;:{&quot;displayName&quot;:&quot;Hsu Pippin&quot;,&quot;userId&quot;:&quot;15368761151660939211&quot;},&quot;user_tz&quot;:-60}}" data-outputid="002cc17b-ec57-42a9-8009-549475a9f883" data-execution_count="16">
 <details class="code-fold">
-<summary>View Python Code</summary>
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract traffic signal nodes from OSM via Overpass</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>traffic_signals <span class="op">=</span> ox.features_from_polygon(</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    study_area_4326.union_all(),</span>
@@ -941,7 +950,7 @@ Name: count, dtype: int64
 </div>
 <div id="code17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:83519,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1778332508147,&quot;user&quot;:{&quot;displayName&quot;:&quot;Hsu Pippin&quot;,&quot;userId&quot;:&quot;15368761151660939211&quot;},&quot;user_tz&quot;:-60}}" data-outputid="b285555e-7b44-4f45-c0c2-11b1e5e4cce0" data-execution_count="17">
 <details class="code-fold">
-<summary>View Python Code</summary>
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count intersections and signal coverage</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> geom_to_endpoints(geom):</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> geom.geom_type <span class="op">==</span> <span class="st">'MultiLineString'</span>:</span>
@@ -979,7 +988,7 @@ Signal coverage             : 1.0%</code></pre>
 </div>
 <div id="code18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:648766,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1778334382859,&quot;user&quot;:{&quot;displayName&quot;:&quot;Hsu Pippin&quot;,&quot;userId&quot;:&quot;15368761151660939211&quot;},&quot;user_tz&quot;:-60}}" data-outputid="75953c11-7544-4760-9cdc-96f22e360a05" data-execution_count="18">
 <details class="code-fold">
-<summary>View Python Code</summary>
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># AUGMENTED CONVEYAL LTS PIPELINE — Northern Ireland Cycling Network</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># =============================================================================</span></span>
@@ -1291,7 +1300,7 @@ LTS 4       479,632      466,133    -13,499</code></pre>
 <h3 data-number="7.3" class="anchored" data-anchor-id="lts-map"><span class="header-section-number">7.3</span> LTS map</h3>
 <div id="code20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:219913,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1778335057932,&quot;user&quot;:{&quot;displayName&quot;:&quot;Hsu Pippin&quot;,&quot;userId&quot;:&quot;15368761151660939211&quot;},&quot;user_tz&quot;:-60}}" data-outputid="57c0e283-5593-4eef-d526-cb28ba940900" data-execution_count="19">
 <details class="code-fold">
-<summary>View Python Code</summary>
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>plot_gdf <span class="op">=</span> edges[edges.<span class="bu">apply</span>(is_cyclable, axis<span class="op">=</span><span class="dv">1</span>)].copy()</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plot_gdf[<span class="st">'lts_status'</span>] <span class="op">=</span> plot_gdf[<span class="st">'lts'</span>].<span class="bu">apply</span>(</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> x: <span class="ss">f"LTS </span><span class="sc">{</span><span class="bu">int</span>(x)<span class="sc">}</span><span class="ss">"</span> <span class="cf">if</span> pd.notnull(x) <span class="cf">else</span> <span class="st">"Missing"</span></span>
@@ -1330,7 +1339,7 @@ LTS 4       479,632      466,133    -13,499</code></pre>
 </div>
 <div id="code21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;executionInfo&quot;,&quot;value&quot;:{&quot;elapsed&quot;:17149,&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1778335075087,&quot;user&quot;:{&quot;displayName&quot;:&quot;Hsu Pippin&quot;,&quot;userId&quot;:&quot;15368761151660939211&quot;},&quot;user_tz&quot;:-60}}" data-outputid="a8d3f158-ade8-4792-a755-eb1b67207e9d" data-execution_count="20">
 <details class="code-fold">
-<summary>View Python Code</summary>
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>cyclable_mask <span class="op">=</span> edges.<span class="bu">apply</span>(is_cyclable, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>lts_keys   <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">2.0</span>, <span class="fl">3.0</span>, <span class="fl">4.0</span>]</span>
@@ -1384,7 +1393,7 @@ LTS 4       479,632      466,133    -13,499</code></pre>
 <p>Save the final LTS-labelled network as GeoParquet for downstream use in Conveyal or other routing/accessibility tools.</p>
 <div id="code23" class="cell">
 <details class="code-fold">
-<summary>View Python Code</summary>
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select columns relevant for downstream analysis</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>export_cols <span class="op">=</span> [</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'u'</span>, <span class="st">'v'</span>, <span class="st">'key'</span>, <span class="st">'osmid'</span>, <span class="st">'highway'</span>, <span class="st">'maxspeed'</span>, <span class="st">'name'</span>, <span class="st">'oneway'</span>,</span>
