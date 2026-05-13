@@ -46,5 +46,5 @@ their journeys.
 
 ::: {.callout-tip}
 ## Explore the Results
-Use the **[Belfast LTS Connectivity Explorer](belfast-cycling-dashboard/belfast_lts_connectivity_dashboard.html)** to interactively select any SDZ, adjust the detour tolerance, and see connectivity metrics update in real time. Technical notebooks are available in the sidebar.
+Use the **[Belfast LTS Connectivity Explorer](https://zhengpei-xu.github.io//PCTNI/belfast-cycling-dashboard/belfast_lts_connectivity_dashboard.html)** to interactively select any SDZ, adjust the detour tolerance, and see connectivity metrics update in real time. Technical notebooks are available in the sidebar.
 :::
